@@ -75,7 +75,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Cenixoft
+                    Cenixoft of Knoting
                 </div>
 
                 <div class="links">
