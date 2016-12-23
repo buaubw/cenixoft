@@ -44,6 +44,9 @@
               <td>11-7-2014</td>
               <td><span class="label label-success">Approved</span></td>
               <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+              <td><a><i class="fa fa-eye"></i> </a></td>
+              <td><a><i class="fa fa-edit"></i> </a></td>
+              <td><a><i class="fa fa-times"></i> </a></td>
             </tr>
 
           </table>
