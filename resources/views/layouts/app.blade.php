@@ -49,13 +49,19 @@
         ]); ?>
     </script>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-yellow sidebar-mini">
 
 
 <div class="wrapper" style="min-height:680px;">
 
   <header class="main-header">
     <!-- Logo -->
+    <a href="../../index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>C</b>X</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>C</b><span style="color:black;">enixoft</span></span>
+    </a>
 
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -316,9 +322,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Website Service</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Mobile  Apps </a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Design </a></li>
+            <li class="active"><a href="index.html"><i class="fa fa-minus"></i> Website Service</a></li>
+            <li><a href="index2.html"><i class="fa fa-minus"></i> Mobile  Apps </a></li>
+            <li><a href="index2.html"><i class="fa fa-minus"></i> Design </a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -327,13 +333,14 @@
             <span> Document Store</span>
             <span class="pull-right-container">
           </a>
-
-        <li class="treeview">
-          <a href="#">
+          </li>
+          <li class="">
+            <a href="#">
             <i class="fa fa-pencil-square"></i> <span>Education zone</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+
+            </a>
+            </li>
+
         <li><a href="documentation/index.html"><i class="fa fa-users"></i> <span>Account Managment</span></a></li>
 
       </ul>
