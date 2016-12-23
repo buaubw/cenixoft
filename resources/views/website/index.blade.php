@@ -36,7 +36,9 @@
               <th>Link</th>
               <th>Date Time</th>
               <th>By</th>
-              <th></th>
+              <th>View</th>
+              <th>Edit</th>
+              <th>Delete</th>
             </tr>
             <tr>
               <td>183</td>
