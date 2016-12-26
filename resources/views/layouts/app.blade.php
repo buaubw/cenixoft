@@ -337,13 +337,27 @@
           <li class="">
             <a href="#">
             <i class="fa fa-pencil-square"></i> <span>Education zone</span>
-
             </a>
             </li>
-
-        <li><a href="documentation/index.html"><i class="fa fa-users"></i> <span>Account Managment</span></a></li>
-
-      </ul>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-weixin"></i>
+                <span> Feedback</span>
+                <span class="pull-right-container">
+              </a>
+              </li>
+          <li class="active treeview">
+            <a href="#">
+              <i class="fa fa-users"></i> <span> Account Managment</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li class="active"><a href="index.html"><i class="fa fa-minus"></i> Customer </a></li>
+              <li><a href="index2.html"><i class="fa fa-minus"></i> Admin </a></li>
+            </ul>
+          </li>
     </section>
     <!-- /.sidebar -->
   </aside>
