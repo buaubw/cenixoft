@@ -73,7 +73,7 @@
      <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
 
-          
+
           <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
@@ -245,7 +245,7 @@
 
         </li>
         <li class="treeview">
-          <a href="#">
+        <a href="{{ url('document') }}">
             <i class="fa fa-file-text-o"></i>
             <span> Document Store</span>
             <span class="pull-right-container">

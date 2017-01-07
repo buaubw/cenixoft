@@ -29,8 +29,11 @@ Route::group(['middleware' => 'web'], function() {
   Route::resource('profile', 'ProfileController');
   Route::resource('mobile', 'MobileController');
   Route::resource('design', 'DesignController');
-
-
+  Route::get('document/requirement', 'documentController@requirement');
+  Route::get('document/Contact', 'documentController@Contact');
+  Route::get('document/Invoice', 'documentController@Invoice');
+  Route::get('document/Quotation', 'documentController@Quotation');
+  Route::resource('document', 'DocumentController');
 
   // Route::get('profile/profile', 'profileController@profile');
 
