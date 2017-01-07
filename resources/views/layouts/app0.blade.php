@@ -56,7 +56,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="../../index2.html" class="logo">
+    <a href="{{ url('home') }}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>C</b>X</span>
       <!-- logo for regular state and mobile devices -->
@@ -315,20 +315,16 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
-          <a href="#">
+        <a href="{{ url('profile') }}">
             <i class="fa fa-briefcase"></i> <span>Profile</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-minus"></i> Website Service</a></li>
-            <li><a href="index2.html"><i class="fa fa-minus"></i> Mobile  Apps </a></li>
-            <li><a href="index2.html"><i class="fa fa-minus"></i> Design </a></li>
-          </ul>
+
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="{{ url('document') }}">
             <i class="fa fa-file-text-o"></i>
             <span> Document Store</span>
             <span class="pull-right-container">

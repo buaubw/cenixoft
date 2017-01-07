@@ -8,7 +8,7 @@
 
 <div class="container" style="padding-top:50px;">
   <div class="col-md-2">
-<button type="button" class="btn btn-block btn-warning">Create</button>
+<a href="{{ url('profile/create') }}" class="btn btn-block btn-warning">Create</a>
 </div>
 
   <div class="row" style="padding-top:50px;">
