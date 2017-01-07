@@ -70,35 +70,24 @@
         <div class="box-body table-responsive no-padding">
           <table class="table table-hover">
             <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Link</th>
+              <th>No</th>
+              <th>Project Name</th>
               <th>Date Time</th>
               <th>By</th>
               <th>View</th>
               <th>Edit</th>
-              <th>Delete</th>
+              <th>Remove</th>
             </tr>
             <tr>
               <td>001</td>
-              <td>John Doe</td>
+              <td>Logo Design</td>
               <td>11-7-2014</td>
-              <td><span class="label label-success">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+              <td>Bua</span></td>
               <td><a><i class="fa fa-eye"></i> </a></td>
               <td><a><i class="fa fa-edit"></i> </a></td>
               <td><a><i class="fa fa-times"></i> </a></td>
             </tr>
-            <tr>
-              <td>002</td>
-              <td>Macky wectia</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-success">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-              <td><a><i class="fa fa-eye"></i> </a></td>
-              <td><a><i class="fa fa-edit"></i> </a></td>
-              <td><a><i class="fa fa-times"></i> </a></td>
-            </tr>
+
           </table>
         </div>
         <!-- /.box-body -->
