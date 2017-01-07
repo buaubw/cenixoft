@@ -19,6 +19,7 @@ Route::group(['middleware' => 'web'], function() {
 
   Route::resource('website', 'WebsiteController');
   Route::resource('profile', 'ProfileController');
+
   // Route::get('profile/profile', 'profileController@profile');
 
 });

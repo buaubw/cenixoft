@@ -41,7 +41,7 @@
               <th>Delete</th>
             </tr>
             <tr>
-              <td>183</td>
+              <td>001</td>
               <td>John Doe</td>
               <td>11-7-2014</td>
               <td><span class="label label-success">Approved</span></td>
@@ -50,7 +50,16 @@
               <td><a><i class="fa fa-edit"></i> </a></td>
               <td><a><i class="fa fa-times"></i> </a></td>
             </tr>
-
+            <tr>
+              <td>002</td>
+              <td>Macky wectia</td>
+              <td>11-7-2014</td>
+              <td><span class="label label-success">Approved</span></td>
+              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+              <td><a><i class="fa fa-eye"></i> </a></td>
+              <td><a><i class="fa fa-edit"></i> </a></td>
+              <td><a><i class="fa fa-times"></i> </a></td>
+            </tr>
           </table>
         </div>
         <!-- /.box-body -->
