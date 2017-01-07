@@ -25,8 +25,8 @@ Route::group(['middleware' => 'web'], function() {
   Route::get('profile/design', 'ProfileController@design');
   Route::get('profile/logo', 'ProfileController@logo');
   Route::get('profile/mobile', 'ProfileController@mobile');
+  Route::get('profile/website', 'ProfileController@website');
   Route::resource('profile', 'ProfileController');
-
   Route::resource('mobile', 'MobileController');
   Route::resource('design', 'DesignController');
 

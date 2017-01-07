@@ -83,9 +83,29 @@
               <td>Logo Design</td>
               <td>11-7-2014</td>
               <td>Bua</span></td>
-              <td><a><i class="fa fa-eye"></i> </a></td>
+              <td><a ><i class="fa fa-eye"></i> </a>
+
+
+
+              </td>
               <td><a><i class="fa fa-edit"></i> </a></td>
-              <td><a><i class="fa fa-times"></i> </a></td>
+              <td><button onclick="myFunction()"><i class="fa fa-times"></i> </button>
+                <script>
+function myFunction() {
+    var x;
+    if (confirm("Press a button!") == true) {
+        x = "You pressed OK!";
+    } else {
+        x = "You pressed Cancel!";
+    }
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+
+
+
+              </td>
             </tr>
 
           </table>

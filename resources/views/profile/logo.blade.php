@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app0')
 
 @section('content')
 
@@ -31,21 +31,21 @@
         <div class="box-body table-responsive no-padding">
           <table class="table table-hover">
             <tr>
-              <th>ID</th>
+              <th>No</th>
               <th>Name</th>
-              <th>Link</th>
+              <th>Image</th>
               <th>Date Time</th>
               <th>By</th>
               <th>View</th>
               <th>Edit</th>
-              <th>Delete</th>
+              <th>Remove </th>
             </tr>
             <tr>
               <td>183</td>
               <td>John Doe</td>
-              <td>11-7-2014</td>
+              <td><img src="" style="width:30px;height:auto;"></td>
               <td><span class="label label-success">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+              <td>.</td>
               <td><a><i class="fa fa-eye"></i> </a></td>
               <td><a><i class="fa fa-edit"></i> </a></td>
               <td><a><i class="fa fa-times"></i> </a></td>

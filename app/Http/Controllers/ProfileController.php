@@ -23,6 +23,10 @@ class ProfileController extends Controller
     {
         return view('profile.mobile');
     }
+    public function website()
+    {
+        return view('profile.website');
+    }
     public function logo()
     {
         return view('profile.logo');
