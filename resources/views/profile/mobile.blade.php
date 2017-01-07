@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app0')
 
 @section('content')
 
@@ -34,6 +34,7 @@
               <th>ID</th>
               <th>Name</th>
               <th>Link</th>
+              <th>Image<th>
               <th>Date Time</th>
               <th>By</th>
               <th>View</th>
@@ -41,11 +42,12 @@
               <th>Delete</th>
             </tr>
             <tr>
-              <td>183</td>
+              <td>1</td>
               <td>John Doe</td>
+              <td>John </td>
               <td>11-7-2014</td>
-              <td><span class="label label-success">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+              <td>11-7-2014</td>
+              <td>11-7-2014</td>
               <td><a><i class="fa fa-eye"></i> </a></td>
               <td><a><i class="fa fa-edit"></i> </a></td>
               <td><a><i class="fa fa-times"></i> </a></td>

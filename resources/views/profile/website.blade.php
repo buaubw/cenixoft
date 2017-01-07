@@ -33,10 +33,10 @@
             <tr>
               <th>No</th>
               <th>Name</th>
+              <th>Image</th>
               <th>Link</th>
               <th>Date Time</th>
               <th>By</th>
-              <th>Description</th>
               <th>View</th>
               <th>Edit</th>
               <th>Delete</th>
@@ -44,7 +44,7 @@
             <tr>
               <td>183</td>
               <td>John Doe</td>
-              <td>John Doe</td>
+              <td><img src="" style="width:30px;height:auto;"></td>
               <td>11-7-2014</td>
               <td><span class="label label-success">Approved</span></td>
               <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
