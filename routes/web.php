@@ -14,6 +14,10 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/logout', function () {
+  Session::flush();
+    return view('welcome');
+});
 
 Route::group(['middleware' => 'web'], function() {
 
