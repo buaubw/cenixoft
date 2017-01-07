@@ -257,7 +257,7 @@
             </a>
             </li>
             <li class="treeview">
-              <a href="#">
+              <a href="{{url('/feedback')}}" >
                 <i class="fa fa-weixin"></i>
                 <span> Feedback</span>
                 <span class="pull-right-container">

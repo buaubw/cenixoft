@@ -34,6 +34,7 @@ Route::group(['middleware' => 'web'], function() {
   Route::get('document/Invoice', 'documentController@Invoice');
   Route::get('document/Quotation', 'documentController@Quotation');
   Route::resource('document', 'DocumentController');
+    Route::resource('feedback', 'FeedbackController');
 
   // Route::get('profile/profile', 'profileController@profile');
 
