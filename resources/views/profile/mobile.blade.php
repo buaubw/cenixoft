@@ -15,7 +15,7 @@
     <div class="col-xs-11 col-md-11">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Profile</h3>
+          <h3 class="box-title">Mobile application</h3>
 
           <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">

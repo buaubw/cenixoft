@@ -31,17 +31,19 @@
         <div class="box-body table-responsive no-padding">
           <table class="table table-hover">
             <tr>
-              <th>ID</th>
+              <th>No</th>
               <th>Name</th>
               <th>Link</th>
               <th>Date Time</th>
               <th>By</th>
+              <th>Description</th>
               <th>View</th>
               <th>Edit</th>
               <th>Delete</th>
             </tr>
             <tr>
               <td>183</td>
+              <td>John Doe</td>
               <td>John Doe</td>
               <td>11-7-2014</td>
               <td><span class="label label-success">Approved</span></td>
