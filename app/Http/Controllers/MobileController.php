@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class MobileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,21 +13,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('profile.index');
+        return view('mobile.index');
     }
-    public function design()
-    {
-        return view('profile.design');
-    }
-    public function mobile()
-    {
-        return view('profile.mobile');
-    }
-    public function logo()
-    {
-        return view('profile.logo');
-    }
-
 
     /**
      * Show the form for creating a new resource.
@@ -36,7 +23,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-          return view('profile.create');
+        //
     }
 
     /**

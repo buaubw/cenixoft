@@ -13,7 +13,7 @@
 
 
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
@@ -25,10 +25,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <section class="content">
           <!-- Small boxes (Stat box) -->
-          <div class="row">
+          <div align="center class="row">
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-aqua">
@@ -38,7 +38,7 @@
                   <p>Notification</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-bag"></i>
+                  <i class="glyphicon glyphicon-bell"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>

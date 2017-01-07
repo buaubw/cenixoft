@@ -18,7 +18,15 @@ Route::get('/', function () {
 Route::group(['middleware' => 'web'], function() {
 
   Route::resource('website', 'WebsiteController');
+  Route::get('profile/design', 'ProfileController@design');
+  Route::get('profile/logo', 'ProfileController@logo');
+  Route::get('profile/mobile', 'ProfileController@mobile');
   Route::resource('profile', 'ProfileController');
+  Route::resource('mobile', 'MobileController');
+  Route::resource('design', 'DesignController');
+
+
+
   // Route::get('profile/profile', 'profileController@profile');
 
 });
