@@ -8,7 +8,46 @@
 
 <div class="container" style="padding-top:50px;">
   <div class="col-md-2">
-<a href="{{ url('profile/create') }}" class="btn btn-block btn-warning">Create</a>
+<!-- <a href="{{ url('profile/create') }}" class="btn btn-block btn-warning">Create</a> -->
+
+
+
+<!-- Small modal -->
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bs-example-modal-sm">Create</button>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="box box-primary">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Create</h3>
+                  </div>
+                  <!-- /.box-header -->
+                  <!-- form start -->
+                  <form role="form">
+                    <div class="box-body">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name">
+                      </div>
+
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">Cancel</button>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                  </form>
+                </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 </div>
 
   <div class="row" style="padding-top:50px;">
