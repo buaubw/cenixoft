@@ -28,13 +28,15 @@
               <div class="col-md-4">
                 <input class="form-control" type="text" id="Name Company"  name="Name Company" value="" placeholder="Name Company">
               </div>
-
-
-              <div class="box-footer">
+<br>
+<br>
+<br>
+<div class="row">
+              <div  class="box-footer">
                   <button type="submit" class="btn btn-primary">Cancel</button>
                 <button type="submit" class="btn btn-primary">Save</button>
               </div>
-
+</div>
 
             </div>
 
