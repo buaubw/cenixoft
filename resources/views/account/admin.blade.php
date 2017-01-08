@@ -8,14 +8,14 @@
 <div class="container" style="padding-top:50px;">
   <div class="col-md-2">
 <!-- <a href="{{ url('profile/create') }}" class="btn btn-block btn-warning">Create</a> -->
-
+<a href="{{url('account/createadmin')}}" class="btn btn-warning" style=" margin-left: 20px">Create new account</a>
 </div>
 
   <div class="row" style="padding-top:50px;">
     <div class="col-xs-11 col-md-11">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Feedback</h3>
+          <h3 class="box-title">Admin Management</h3>
 
           <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
@@ -32,34 +32,27 @@
           <table class="table table-hover">
             <tr>
               <th>No</th>
-              <th>Company Name</th>
+              <th>Username</th>
+              <th>Password</th>
               <th>First Name</th>
               <th>Last Name</th>
-              <th>Email</th>
+              <th>Date Time</th>
+              <th>By</th>
+              <th>Delete</th>
               <th>View</th>
             </tr>
             <tr>
               <td>001</td>
               <td>Logo Design</td>
               <td>11-7-2014</td>
+              <td>11-7-2014</td>
               <td>Bua</span></td>
               <td>Bua</span></td>
-              <td><a ><i class="fa fa-eye"></i> </a>
+              <td>11-7-2014</td>
+              <td><a ><i class="fa fa-remove"></i> </a>
+                <td><a ><i class="fa fa-eye"></i> </a>
               </td>
                 <script>
-function myFunction() {
-    var x;
-    if (confirm("Press a button!") == true) {
-        x = "You pressed OK!";
-    } else {
-        x = "You pressed Cancel!";
-    }
-    document.getElementById("demo").innerHTML = x;
-}
-</script>
-
-
-
 
               </td>
             </tr>
