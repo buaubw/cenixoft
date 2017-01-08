@@ -30,9 +30,9 @@ Route::group(['middleware' => 'web'], function() {
   Route::resource('mobile', 'MobileController');
   Route::resource('design', 'DesignController');
   Route::get('document/requirement', 'documentController@requirement');
-  Route::get('document/Contact', 'documentController@Contact');
-  Route::get('document/Invoice', 'documentController@Invoice');
-  Route::get('document/Quotation', 'documentController@Quotation');
+  Route::get('document/contact', 'documentController@contact');
+  Route::get('document/invoice', 'documentController@invoice');
+  Route::get('document/quotation', 'documentController@quotation');
   Route::resource('document', 'DocumentController');
   Route::resource('feedback', 'FeedbackController');
   Route::get('account/customer', 'AccountController@customer');

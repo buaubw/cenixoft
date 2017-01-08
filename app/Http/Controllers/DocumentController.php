@@ -21,19 +21,24 @@ class DocumentController extends Controller
         return view('document.requirement');
         //
     }
-    public function Contact()
+    public function contact()
     {
-        return view('document.Contact');
+        return view('document.contact');
         //
     }
-    public function Invoice()
+    public function invoice()
     {
-        return view('document.Invoice');
+        return view('document.invoice');
         //
     }
-    public function Quotation()
+    public function quotation()
     {
-        return view('document.Quotation');
+        return view('document.quotation');
+        //
+    }
+    public function create()
+    {
+        return view('document.create');
         //
     }
     /**

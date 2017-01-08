@@ -8,11 +8,11 @@
 
 <div class="container" style="padding-top:50px;">
   <div class="col-md-8">
-<center><a href="{{url('document/requirement')}}" class="btn btn-warning" style=" margin-left: 20px">Requirement</a>
-<a href="{{url('document/quotation')}}" class="btn  btn-warning" style=" margin-left: 20px">Quotation</a>
-<a href="{{url('document/contact')}}" class="btn btn-warning " style=" margin-left: 20px" >Contact</a>
-<a href="{{url('document/invoice')}}" class="btn btn-warning " style=" margin-left: 20px">Invoice</a></center>
-<a href="{{url('document/Create')}}"  class="btn btn-warning " style=" margin-top: 20px">Create</a>
+<center><a href="{{url('document/requirement')}}"  class="btn btn-warning" style=" margin-left: 20px">Requirement</a>
+<a  href="{{url('document/quotation')}}" class="btn  btn-warning" style=" margin-left: 20px">Quotation</a>
+<a  href="{{url('document/contact')}}" class="btn btn-warning " style=" margin-left: 20px" >Contact</a>
+<a  href="{{url('document/invoice')}}" class="btn btn-warning " style=" margin-left: 20px">Invoice</a></center>
+<a href="{{url('document/Controllers')}}"  class="btn btn-warning " style=" margin-top: 20px">Create</a>
 
 </div>
 
@@ -20,7 +20,7 @@
     <div class="col-xs-11 col-md-11">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Quotation</h3>
+          <h3 class="box-title">Requirement</h3>
 
           <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
@@ -37,7 +37,7 @@
           <table class="table table-hover">
             <tr>
             <th>No.</th>
-            <th>Quotation</th>
+            <th>Requirement</th>
             <th>Date time</th>
             <th>By</th>
             <th style="text-align: center;">View</th>
@@ -52,8 +52,8 @@
             <td style="text-align: center;"><a><i class="fa fa-eye" ></i> </a></td>
             <td style="text-align: center;"><a><i class="fa fa-edit"></i> </a></td>
             <td style="text-align: center;"><a><i class="fa fa-times"></i> </a></td>
-          </tr>
 
+          </tr>
           </table>
         </div>
         <!-- /.box-body -->
