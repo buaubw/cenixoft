@@ -15,13 +15,13 @@
 
 </div>
   <div class="row" style="padding-top:50px;">
-    <div class="col-xs-11 col-md-11">
+    <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">
           <h3 class="box-title">Admin Managment</h3>
           <div class="box-body ">
 
-            <div class="row">
+            <div class="row" style="padding-top:10px;">
               <div class="col-md-2" style="text-align:right;">
                 <label for="firstname" >First Name</label>
               </div>
@@ -36,7 +36,7 @@
               </div>
 
             </div>
-            <div class="row">
+            <div class="row" style="padding-top:10px;">
               <div class="col-md-2" style="text-align:right;">
                 <label for="name" >Last Name</label>
               </div>
@@ -51,7 +51,7 @@
               </div>
 
             </div>
-            <div class="row">
+            <div class="row" style="padding-top:10px;">
               <div class="col-md-2" style="text-align:right;">
                 <label for="name" >Company Name</label>
               </div>
@@ -66,7 +66,7 @@
               </div>
 
             </div>
-            <div class="box-footer">
+            <div  style="text-align:center;padding-top:20px;" >
                 <button type="submit" class="btn btn-primary">Cancel</button>
               <button type="submit" class="btn btn-primary">Save</button>
             </div>

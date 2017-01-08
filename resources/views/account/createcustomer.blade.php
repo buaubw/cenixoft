@@ -4,18 +4,11 @@
 
 <div class="content-wrapper" style="height:1000px;">
 
-
-
 <div class="container" style="padding-top:50px;">
-  <div class="col-md-2">
-<!-- <a href="{{ url('profile/create') }}" class="btn btn-block btn-warning">Create</a> -->
-<div class="container" style="padding-top:50px;">
-  <div class="col-md-8">
 
 
-</div>
   <div class="row" style="padding-top:50px;">
-    <div class="col-xs-11 col-md-11">
+    <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">
           <h3 class="box-title">Customer Managment</h3>
@@ -25,7 +18,7 @@
         <!-- /.box-header -->
         <div class="box-body ">
 
-          <div class="row">
+            <div class="row" style="padding-top:10px;">
             <div class="col-md-2" style="text-align:right;">
               <label for="firstname" >First Name</label>
             </div>
@@ -40,7 +33,7 @@
             </div>
 
           </div>
-          <div class="row">
+            <div class="row" style="padding-top:10px;">
             <div class="col-md-2" style="text-align:right;">
               <label for="name" >Last Name</label>
             </div>
@@ -55,7 +48,7 @@
             </div>
 
           </div>
-          <div class="row">
+          <div class="row" style="padding-top:10px;">
             <div class="col-md-2" style="text-align:right;">
               <label for="name" >Company Name</label>
             </div>
@@ -70,7 +63,7 @@
             </div>
 
           </div>
-          <div class="box-footer">
+          <div  style="text-align:center;padding-top:20px;" >
               <button type="submit" class="btn btn-primary">Cancel</button>
             <button type="submit" class="btn btn-primary">Save</button>
           </div>
@@ -80,7 +73,7 @@
 
 
 
-
+</div>
         </div>
         <!-- /.box-body -->
       </div>
@@ -88,7 +81,6 @@
 
 </div>
 
-</div>
 </div>
 </div>
 
