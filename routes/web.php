@@ -37,6 +37,8 @@ Route::group(['middleware' => 'web'], function() {
   Route::resource('feedback', 'FeedbackController');
   Route::get('account/customer', 'AccountController@customer');
   Route::get('account/admin', 'AccountController@admin');
+  Route::get('account/createcustomer', 'AccountController@createcustomer');
+  Route::get('account/createadmin', 'AccountController@createadmin');
   Route::resource('account', 'AccountController');
 
   // Route::get('profile/profile', 'profileController@profile');

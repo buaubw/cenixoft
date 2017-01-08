@@ -1,21 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.app0')
 
 @section('content')
 
 <div class="content-wrapper" style="height:1000px;">
 
 
-
 <div class="container" style="padding-top:50px;">
   <div class="col-md-2">
 <!-- <a href="{{ url('profile/create') }}" class="btn btn-block btn-warning">Create</a> -->
-
-
-
-
-
-
-
 
 </div>
 

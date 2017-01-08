@@ -23,7 +23,14 @@ class AccountController extends Controller
     {
         return view('account.admin');
     }
-
+    public function createcustomer()
+    {
+        return view('account.createcustomer');
+    }
+    public function createadmin()
+    {
+        return view('account.createadmin');
+    }
     /**
      * Show the form for creating a new resource.
      *

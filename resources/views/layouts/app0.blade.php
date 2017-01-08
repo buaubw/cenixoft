@@ -343,20 +343,23 @@
                 <span class="pull-right-container">
               </a>
               </li>
-            <li class="active treeview">
-            <a href="#">
-              <i class="fa fa-users"></i> <span> Account Managment</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active"><a href="index.html"><i class="fa fa-minus"></i> Customer </a></li>
-              <li><a href="index2.html"><i class="fa fa-minus"></i> Admin </a></li>
-            </ul>
-            </li>
-        <li><a href="documentation/index.html"><i class="fa fa-users"></i> <span>Account Managment</span></a></li>
-
+              <li class="active treeview">
+                <a href="#">
+                  <i class="fa fa-users"></i> <span> Account Managment</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                  <li class="active">
+                  <a href="{{url('account/customer')}}" >
+                  <i class="fa fa-minus"></i> Customer </a>
+                  </li>
+                  <li>
+                    <a href="{{url('account/admin')}}" >
+                  <i class="fa fa-minus"></i> Admin </a></li>
+                </ul>
+              </li>
       </ul>
     </section>
     <!-- /.sidebar -->
