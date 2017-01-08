@@ -12,8 +12,6 @@
 <a  href="{{url('document/quotation')}}" class="btn  btn-warning" style=" margin-left: 20px">Quotation</a>
 <a  href="{{url('document/contact')}}" class="btn btn-warning " style=" margin-left: 20px" >Contact</a>
 <a  href="{{url('document/invoice')}}" class="btn btn-warning " style=" margin-left: 20px">Invoice</a></center>
-<a href="{{url('document/Create')}}"  class="btn btn-warning " style=" margin-top: 20px">Create</a>
-
 </div>
 
   <div class="row" style="padding-top:50px;">
