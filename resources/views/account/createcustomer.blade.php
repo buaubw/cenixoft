@@ -6,7 +6,6 @@
 
 <div class="container" style="padding-top:50px;">
 
-
   <div class="row" style="padding-top:50px;">
     <div class="col-xs-10 col-md-10">
       <div class="box">

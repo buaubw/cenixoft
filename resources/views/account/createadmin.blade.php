@@ -4,17 +4,14 @@
 
 <div class="content-wrapper" style="height:1000px;">
 
-
-
 <div class="container" style="padding-top:50px;">
-  <div class="col-md-2">
+
 <!-- <a href="{{ url('profile/create') }}" class="btn btn-block btn-warning">Create</a> -->
 <div class="container" style="padding-top:50px;">
-  <div class="col-md-8">
-
+  <div class="col-xs-10 col-md-10">
 
 </div>
-  <div class="row" style="padding-top:50px;">
+
     <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">

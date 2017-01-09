@@ -31,6 +31,10 @@ class ProfileController extends Controller
     {
         return view('profile.logo');
     }
+    public function viewlogo()
+    {
+        return view('profile.viewlogo');
+    }
 
 
     /**
