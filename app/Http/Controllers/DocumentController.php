@@ -36,11 +36,23 @@ class DocumentController extends Controller
         return view('document.quotation');
         //
     }
-    public function create()
+    public function createrequirement()
     {
-        return view('document.create');
+        return view('document.createrequirement');
         //
     }
+    public function createquotation()
+    {
+        return view('document.createquotation');
+        //
+    }
+
+
+
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *
