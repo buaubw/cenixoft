@@ -47,7 +47,7 @@
           </tr>
           <tr>
             <td>1</td>
-            <td>Ichitan</td>
+            <td>Ichitan Group requirement</td>
             <td>11-7-2014</td>
             <td>Suwanan</td>
             <td style="text-align: center;"><a><i class="fa fa-eye" ></i> </a></td>

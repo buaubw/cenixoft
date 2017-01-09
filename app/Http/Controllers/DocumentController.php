@@ -46,6 +46,11 @@ class DocumentController extends Controller
         return view('document.createquotation');
         //
     }
+    public function createinvoice()
+    {
+        return view('document.createinvoice');
+        //
+    }
 
 
 
