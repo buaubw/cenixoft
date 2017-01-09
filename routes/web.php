@@ -36,7 +36,8 @@ Route::group(['middleware' => 'web'], function() {
   Route::get('document/quotation', 'documentController@quotation');
   Route::get('document/createrequirement', 'documentController@createrequirement');
   Route::get('document/createquotation', 'documentController@createquotation');
-    Route::get('document/createinvoice', 'documentController@createinvoice');
+  Route::get('document/createinvoice', 'documentController@createinvoice');
+  Route::get('document/viewcompany', 'documentController@viewcompany');
   Route::resource('document', 'DocumentController');
   Route::resource('feedback', 'FeedbackController');
   Route::get('account/customer', 'AccountController@customer');
