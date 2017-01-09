@@ -20,7 +20,7 @@
     <div class="modal-content">
       <div class="box box-primary">
                   <div class="box-header with-border">
-                    <h3 class="box-title">Create</h3>
+                    <h3 class="box-title">Create Profile</h3>
                   </div>
                   <!-- /.box-header -->
                   <!-- form start -->
@@ -35,8 +35,8 @@
                     <!-- /.box-body -->
 
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Cancel</button>
-                      <button type="submit" class="btn btn-primary">Submit</button>
+                        <center><button type="submit" class="btn btn-primary">Cancel</button>
+                      <button type="submit" class="btn btn-primary">Submit</button></center>
                     </div>
 
                   </form>
@@ -51,7 +51,7 @@
 </div>
 
   <div class="row" style="padding-top:50px;">
-    <div class="col-xs-11 col-md-11">
+    <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">
           <h3 class="box-title">Profile</h3>

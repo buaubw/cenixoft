@@ -38,8 +38,8 @@
               <th>Last Name</th>
               <th>Date Time</th>
               <th>By</th>
-              <th>Delete</th>
               <th>View</th>
+              <th>Remove</th>
             </tr>
             <tr>
               <td>001</td>
@@ -49,8 +49,8 @@
               <td>Bua</span></td>
               <td>Bua</span></td>
               <td>11-7-2014</td>
-              <td><a ><i class="fa fa-remove"></i> </a>
                 <td><a ><i class="fa fa-eye"></i> </a>
+              <td><a ><i class="fa fa-remove"></i> </a>
               </td>
                 <script>
 
