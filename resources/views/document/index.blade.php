@@ -12,14 +12,14 @@
 <a href="{{url('document/quotation')}}"  class="btn  btn-warning" style=" margin-left: 20px">Quotation</a>
 <a href="{{url('document/contact')}}"  class="btn btn-warning " style=" margin-left: 20px" >Contact</a>
 <a href="{{url('document/invoice')}}"  class="btn btn-warning " style=" margin-left: 20px">Invoice</a></center>
-<a href="{{url('document/create')}}"  class="btn btn-warning " style=" margin-top: 20px">Create</a>
+
 </div>
 
   <div class="row" style="padding-top:50px;">
-    <div class="col-xs-11 col-md-11">
+    <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Mobile Service</h3>
+          <h3 class="box-title">Document</h3>
 
           <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
