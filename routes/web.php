@@ -45,6 +45,7 @@ Route::group(['middleware' => 'web'], function() {
   Route::get('account/createcustomer', 'AccountController@createcustomer');
   Route::get('account/createadmin', 'AccountController@createadmin');
   Route::resource('account', 'AccountController');
+    Route::resource('education', 'EducationController');
 
   // Route::get('profile/profile', 'profileController@profile');
 
