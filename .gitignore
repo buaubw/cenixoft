@@ -7,3 +7,4 @@ Homestead.yaml
 .env
 README.md
 README.md
+resources/views/document/requirement.blade.php

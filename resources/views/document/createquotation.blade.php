@@ -34,7 +34,7 @@
                 <div class="col-md-4" style="text-align:right;">
                   <label for="firstname" >Upload file</label>
                 </div>
-                <a  href="{{url('document/Uploadfile')}}" class="btn  btn-warning" style=" margin-left: 20px">Uploadfile</a>
+                <a  href="{{url('document/uploadfile')}}" class="btn  btn-warning" style=" margin-left: 20px">Uploadfile</a>
 
                             </div>
 
