@@ -39,6 +39,11 @@ Route::group(['middleware' => 'web'], function() {
   Route::get('document/createinvoice', 'documentController@createinvoice');
   Route::get('document/createcontact', 'documentController@createcontact');
   Route::get('document/viewcompany', 'documentController@viewcompany');
+  Route::get('document/inboxcontact', 'documentController@inboxcontact');
+  Route::get('document/editrequirement', 'documentController@editrequirement');
+  Route::get('document/editcontact', 'documentController@editcontact');
+  Route::get('document/editinvoice', 'documentController@editinvoice');
+  Route::get('document/editquotation', 'documentController@editquotation');
   Route::resource('document', 'DocumentController');
   Route::resource('feedback', 'FeedbackController');
   Route::get('account/customer', 'AccountController@customer');

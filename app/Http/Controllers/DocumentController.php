@@ -61,10 +61,31 @@ class DocumentController extends Controller
         return view('document.viewcompany');
         //
     }
-
-
-
-
+    public function inboxcontact()
+    {
+        return view('document.inboxcontact');
+        //
+    }
+    public function editrequirement()
+    {
+        return view('document.editrequirement');
+        //
+    }
+    public function editcontact()
+    {
+        return view('document.editcontact');
+        //
+    }
+    public function editinvoice()
+    {
+        return view('document.editinvoice');
+        //
+    }
+    public function editquotation()
+    {
+        return view('document.editquotation');
+        //
+    }
 
 
     /**
