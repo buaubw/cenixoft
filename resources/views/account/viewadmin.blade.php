@@ -21,52 +21,50 @@
             <div class="row" style="padding-top:10px;">
               <div class="col-md-1" style="text-align:right;">
                 <label for="No" >No.</label>
-              </div>
-              <div class="col-md-9">
-                <input class="form-control" type="text" id="no"  name="no" value="" placeholder="no.">
-              </div>
+                </div>
+                  <div class="col-md-9">
+                    <input class="form-control" type="text" id="no"  name="no" value="" placeholder="no.">
+                  </div>
 
-              <div class="col-md-1" style="text-align:right;">
-                <label for="username">User Name</label>
-              </div>
-              <div class="col-md-9">
-                <input class="form-control" type="text" id="username"  name="username" value="" placeholder="User Name">
-              </div>
+                  <div class="col-md-1" style="text-align:right;">
+                    <label for="username">User Name</label>
+                    </div>
+                  <div class="col-md-9">
+                    <input class="form-control" type="text" id="username"  name="username" value="" placeholder="User Name">
+                  </div>
+                    </div>
+                      <div class="row" style="padding-top:10px;">
+                        <div class="col-md-1" style="text-align:right;">
+                          <label for="name" >First Name</label>
+                        </div>
+                        <div class="col-md-9">
+                          <input class="form-control" type="text" id="First name"  name="First name" value="" placeholder="First Name">
+                        </div>
+                        <div class="col-md-2" style="text-align:right;">
+                          <label for="username">Create Password</label>
+                        </div>
+                        <div class="col-md-4">
+                          <input class="form-control" type="text" id="create password"  name="create password" value="" placeholder="create password">
+                        </div>
+                        </div>
+                          <div class="row" style="padding-top:10px;">
+                            <div class="col-md-2" style="text-align:right;">
+                              <label for="name" >Company Name</label>
+                            </div>
+                            <div class="col-md-4">
+                              <input class="form-control" type="text" id="company name"  name="company name" value="" placeholder="company Name">
+                            </div>
+                            <div class="col-md-2" style="text-align:right;">
+                              <label for="username">Confirm Password</label>
+                            </div>
+                            <div class="col-md-4">
+                              <input class="form-control" type="text" id="confirm password"  name="confirm password" value="" placeholder="confirm password">
+                            </div>
 
-            </div>
-            <div class="row" style="padding-top:10px;">
-              <div class="col-md-1" style="text-align:right;">
-                <label for="name" >First Name</label>
-              </div>
-              <div class="col-md-9">
-                <input class="form-control" type="text" id="First name"  name="First name" value="" placeholder="First Name">
-              </div>
-              <div class="col-md-2" style="text-align:right;">
-                <label for="username">Create Password</label>
-              </div>
-              <div class="col-md-4">
-                <input class="form-control" type="text" id="create password"  name="create password" value="" placeholder="create password">
-              </div>
-
-            </div>
-            <div class="row" style="padding-top:10px;">
-              <div class="col-md-2" style="text-align:right;">
-                <label for="name" >Company Name</label>
-              </div>
-              <div class="col-md-4">
-                <input class="form-control" type="text" id="company name"  name="company name" value="" placeholder="company Name">
-              </div>
-              <div class="col-md-2" style="text-align:right;">
-                <label for="username">Confirm Password</label>
-              </div>
-              <div class="col-md-4">
-                <input class="form-control" type="text" id="confirm password"  name="confirm password" value="" placeholder="confirm password">
-              </div>
-
-            </div>
-            <div  style="text-align:center;padding-top:20px;" >
-              <button type="submit" class="btn btn-primary">Save</button>
-            </div>
+                          </div>
+                          <div  style="text-align:center;padding-top:20px;" >
+                            <button type="submit" class="btn btn-primary">Save</button>
+                          </div>
 
 
 
