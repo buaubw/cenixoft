@@ -45,6 +45,7 @@ Route::group(['middleware' => 'web'], function() {
   Route::get('account/admin', 'AccountController@admin');
   Route::get('account/createcustomer', 'AccountController@createcustomer');
   Route::get('account/createadmin', 'AccountController@createadmin');
+  Route::get('account/viewadmin', 'AccountController@viewadmin');
   Route::resource('account', 'AccountController');
   Route::get('education/createeducation', 'EducationController@createeducation');
   Route::resource('education', 'EducationController');

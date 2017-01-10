@@ -49,7 +49,7 @@
               <td>Bua</span></td>
               <td>Bua</span></td>
               <td>11-7-2014</td>
-                <td><a ><i class="fa fa-eye"></i> </a>
+              <td style="text-align: center;"><a href="{{url('account/viewadmin')}}" ><i class="fa fa-eye" ></i> </a></td>
               <td><a ><i class="fa fa-remove"></i> </a>
               </td>
                 <script>

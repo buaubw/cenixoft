@@ -31,6 +31,10 @@ class AccountController extends Controller
     {
         return view('account.createadmin');
     }
+    public function viewadmin()
+    {
+        return view('account.viewadmin');
+    }
     /**
      * Show the form for creating a new resource.
      *
