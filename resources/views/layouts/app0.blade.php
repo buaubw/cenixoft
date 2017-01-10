@@ -132,12 +132,10 @@
 
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
+        <li class="treeview">
         <a href="{{ url('profile') }}">
             <i class="fa fa-briefcase"></i> <span>Profile</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+
           </a>
 
         </li>
@@ -149,7 +147,7 @@
           </a>
           </li>
           <li class="">
-            <a href=""{{ url('education') }}"">
+            <a href="{{ url('/education') }}">
             <i class="fa fa-pencil-square"></i> <span>Education zone</span>
 
             </a>
@@ -169,7 +167,7 @@
                   </span>
                 </a>
                 <ul class="treeview-menu">
-                  <li class="active">
+                  <li class="">
                   <a href="{{url('account/customer')}}" >
                   <i class="fa fa-minus"></i> Customer </a>
                   </li>

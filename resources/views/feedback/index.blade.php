@@ -6,17 +6,14 @@
 
 
 
-<div class="container" style="padding-top:50px;">
-  <div class="col-md-2">
-<!-- <a href="{{ url('profile/create') }}" class="btn btn-block btn-warning">Create</a> -->
+<div class="container" style="padding-top:20px;">
+<h3 class="box-title">Feedback</h3>
 
-</div>
-
-  <div class="row" style="padding-top:50px;">
+  <div class="row" style="padding-top:10px;">
     <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Feedback</h3>
+          <h3 class="box-title"></h3>
 
           <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">

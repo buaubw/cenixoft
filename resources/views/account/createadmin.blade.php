@@ -4,18 +4,14 @@
 
 <div class="content-wrapper" style="height:1000px;">
 
-<div class="container" style="padding-top:50px;">
+<div class="container" style="padding-top:20px;">
 
-<!-- <a href="{{ url('profile/create') }}" class="btn btn-block btn-warning">Create</a> -->
-<div class="container" style="padding-top:50px;">
-  <div class="col-xs-10 col-md-10">
-
-</div>
+  <h3 class="box-title">Admin Managment</h3>
 
     <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Admin Managment</h3>
+          <h3 class="box-title">Create Admin Account</h3>
           <div class="box-body ">
 
             <div class="row" style="padding-top:10px;">
@@ -87,7 +83,7 @@
 
 </div>
 </div>
-</div>
+
 
 
 

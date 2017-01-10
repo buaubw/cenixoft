@@ -5,17 +5,18 @@
 <div class="content-wrapper" style="height:1000px;">
 
 
-<div class="container" style="padding-top:50px;">
+<div class="container" style="padding-top:20px;">
+    <h3 class="box-title">Admin Management</h3>
   <div class="col-md-2">
 <!-- <a href="{{ url('profile/create') }}" class="btn btn-block btn-warning">Create</a> -->
-<a href="{{url('account/createadmin')}}" class="btn btn-warning" style=" margin-left: 20px">Create new account</a>
+<a href="{{url('account/createadmin')}}" class="btn btn-warning" style=" margin-left: ;padding-top:10px;">Create new account</a>
 </div>
 
   <div class="row" style="padding-top:50px;">
     <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Admin Management</h3>
+          <h3 class="box-title"></h3>
 
           <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">

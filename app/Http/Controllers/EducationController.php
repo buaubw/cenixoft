@@ -26,6 +26,10 @@ class EducationController extends Controller
     {
          return view('education.createeducation');
 
+    }public function editeducation()
+    {
+         return view('education.editeducation');
+
     }
 
     /**

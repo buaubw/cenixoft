@@ -45,6 +45,7 @@ Route::group(['middleware' => 'web'], function() {
   Route::get('document/editinvoice', 'documentController@editinvoice');
   Route::get('document/editquotation', 'documentController@editquotation');
   Route::resource('document', 'DocumentController');
+  Route::get('feedback/view', 'FeedbackController@view');
   Route::resource('feedback', 'FeedbackController');
   Route::get('account/customer', 'AccountController@customer');
   Route::get('account/admin', 'AccountController@admin');
@@ -52,6 +53,7 @@ Route::group(['middleware' => 'web'], function() {
   Route::get('account/createadmin', 'AccountController@createadmin');
   Route::get('account/viewadmin', 'AccountController@viewadmin');
   Route::resource('account', 'AccountController');
+    Route::get('education/editeducation', 'EducationController@editeducation');
   Route::get('education/createeducation', 'EducationController@createeducation');
   Route::resource('education', 'EducationController');
 

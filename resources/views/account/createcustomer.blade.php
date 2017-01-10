@@ -4,13 +4,14 @@
 
 <div class="content-wrapper" style="height:1000px;">
 
-<div class="container" style="padding-top:50px;">
+<div class="container" style="padding-top:20px;">
+  <h3 class="box-title">Customer Managment</h3>
 
-  <div class="row" style="padding-top:50px;">
+  <div class="row" style="padding-top:10px;">
     <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Customer Managment</h3>
+          <h3 class="box-title">Create Customer Account</h3>
 
 
         </div>

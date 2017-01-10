@@ -15,6 +15,10 @@ class FeedbackController extends Controller
     {
         return view('feedback.index');
     }
+    public function view()
+    {
+        return view('feedback.view');
+    }
 
     /**
      * Show the form for creating a new resource.
