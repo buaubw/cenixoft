@@ -14,7 +14,7 @@ class EducationController extends Controller
     public function index()
     {
         return view('education.education');
-  
+
     }
 
     /**
@@ -22,9 +22,10 @@ class EducationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createeducation()
     {
-        //
+         return view('education.createeducation');
+
     }
 
     /**
