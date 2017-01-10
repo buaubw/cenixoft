@@ -51,6 +51,11 @@ class DocumentController extends Controller
         return view('document.createinvoice');
         //
     }
+    public function createcontact()
+    {
+        return view('document.createcontact');
+        //
+    }
     public function viewcompany()
     {
         return view('document.viewcompany');

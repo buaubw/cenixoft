@@ -4,9 +4,7 @@
 
 <div class="content-wrapper" style="height:1000px;">
 
-
-
-<div class="container" style="padding-top:50px;">
+<div class="container" style="padding-top:50px;"><h4>Ichitan Group</h4> <br><br>
   <div class="col-md-8">
 <center><a href="{{url('document/requirement')}}"  class="btn btn-warning" style=" margin-left: 20px">Requirement</a>
 <a  href="{{url('document/quotation')}}" class="btn  btn-warning" style=" margin-left: 20px">Quotation</a>

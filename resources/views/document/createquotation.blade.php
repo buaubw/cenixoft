@@ -18,7 +18,7 @@
     <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Create Requirement</h3>
+          <h3 class="box-title">Create Quotation</h3>
           <div class="box-body ">
 
 <br>
