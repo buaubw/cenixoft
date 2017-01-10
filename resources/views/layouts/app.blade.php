@@ -123,7 +123,7 @@
 
           </li>
 
-          
+
 
         </ul>
       </div>
@@ -151,7 +151,7 @@
           </a>
           </li>
           <li class="">
-            <a href="#">
+          <a href="{{ url('education') }}">
             <i class="fa fa-pencil-square"></i> <span>Education zone</span>
             </a>
             </li>
