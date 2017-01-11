@@ -31,7 +31,7 @@
                 <table class="table table-hover">
                   <tr>
                     <th>No.</th>
-                    <th>Contact</th>
+                    <th>Title</th>
                     <th>Date time</th>
                     <th>By</th>
                     <th style="text-align: center;">View</th>
