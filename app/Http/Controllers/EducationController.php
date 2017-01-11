@@ -26,11 +26,17 @@ class EducationController extends Controller
     {
          return view('education.createeducation');
 
-    }public function editeducation()
+    }
+    public function editeducation()
     {
          return view('education.editeducation');
 
     }
+    public function vieweducation()
+    {
+       return view('education.vieweducation');
+
+    }  
 
     /**
      * Store a newly created resource in storage.

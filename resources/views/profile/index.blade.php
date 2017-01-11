@@ -49,7 +49,6 @@
 
 
 </div>
-
   <div class="row" style="padding-top:50px;">
     <div class="col-xs-10 col-md-11">
       <div class="box">
@@ -83,11 +82,7 @@
               <td>Logo Design</td>
               <td>11-7-2014</td>
               <td>Bua</span></td>
-              <td><a ><i class="fa fa-eye"></i> </a>
-
-
-
-              </td>
+              <td><a href="{{url('profile/logo')}}"><i class="fa fa-eye"></i> </a></td>
               <td><a><i class="fa fa-edit"></i> </a></td>
               <td><button onclick="myFunction()"><i class="fa fa-times"></i> </button>
                 <script>

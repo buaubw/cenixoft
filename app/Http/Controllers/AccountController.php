@@ -35,6 +35,10 @@ class AccountController extends Controller
     {
         return view('account.viewadmin');
     }
+    public function viewcustomer()
+    {
+        return view('account.viewcustomer');
+    }
     /**
      * Show the form for creating a new resource.
      *

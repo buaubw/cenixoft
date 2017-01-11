@@ -42,7 +42,7 @@
               <td>11-7-2014</td>
               <td>Bua</span></td>
               <td>Bua</span></td>
-              <td><a ><i class="fa fa-eye"></i> </a>
+              <td style="text-align: center;"><a href="{{url('feedback/view')}}"><i class="fa fa-eye"></i> </a>
               </td>
                 <script>
 function myFunction() {

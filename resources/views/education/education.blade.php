@@ -47,7 +47,7 @@
               <td>11-7-2014</td>
               <td>Bua</span></td>
               <td>11-7-2014</td>
-              <td><a ><i class="fa fa-eye"></i> </a>
+              <td><a href="{{url('education/vieweducation')}}"><i class="fa fa-eye"></i> </a></td>
               <td><a href="{{url('education/editeducation')}}"><i class="fa fa-edit"></i> </a></td>
               <td><a ><i class="fa fa-remove"></i> </a>
               </td>

@@ -46,7 +46,7 @@
               <td><img src="" style="width:30px;height:auto;"></td>
               <td><span class="label label-success">Approved</span></td>
               <td>.</td>
-              <td><a><i class="fa fa-eye"></i> </a></td>
+              <td><a href="{{url('profile/viewlogo')}}"><i class="fa fa-eye"></i> </a></td>
               <td><a><i class="fa fa-edit"></i> </a></td>
               <td><a><i class="fa fa-times"></i> </a></td>
             </tr>

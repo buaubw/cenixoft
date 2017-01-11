@@ -33,8 +33,17 @@ class ProfileController extends Controller
     }
     public function viewlogo()
     {
-        return view('profile.viewlogo');
+        return view('logo.viewlogo');
     }
+    public function viewmobile()
+    {
+        return view('profile.viewmobile');
+    }
+    public function viewwebsite()
+    {
+        return view('profile.viewwebsite');
+    }
+
 
 
     /**

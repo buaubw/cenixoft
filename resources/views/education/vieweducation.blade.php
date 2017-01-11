@@ -11,7 +11,7 @@
     <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">View Logo Design</h3>
+          <h3 class="box-title">View Education Zone</h3>
           <div class="box-body ">
 
             <div class="row" style="padding-top:10px;">
@@ -24,10 +24,10 @@
                     </div>
                       <div class="row" style="padding-top:10px;">
                   <div class="col-md-2" style="text-align:right;">
-                    <label for="username">Image</label>
+                    <label for="username">File</label>
                     </div>
                   <div class="col-md-8">
-                    <input class="form-control" type="text" id="image"  name="image" value="" placeholder="Image">
+                    <input class="form-control" type="text" id="file"  name="file" value="" placeholder="File">
                   </div>
                     </div>
                     <div class="row" style="padding-top:10px;">
@@ -59,7 +59,7 @@
 
 
                               <div  style="text-align:center;padding-top:20px;" >
-                                <a href="{{url('profile/logo')}}" class="btn btn-primary">Back</a>
+                                <a href="{{url('education')}}" class="btn btn-primary">Back</a>
                               </div>
                           </div>
 
@@ -82,8 +82,6 @@
 </div>
 
 </div>
-
-
 
 
 

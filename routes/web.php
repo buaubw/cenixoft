@@ -22,10 +22,10 @@ Route::get('/logout', function () {
 Route::group(['middleware' => 'web'], function() {
 
   Route::resource('website', 'WebsiteController');
-  Route::get('profile/design', 'ProfileController@design');
   Route::get('profile/logo', 'ProfileController@logo');
   Route::get('profile/mobile', 'ProfileController@mobile');
   Route::get('profile/website', 'ProfileController@website');
+  Route::get('profile/createlogo', 'ProfileController@createlogo');
   Route::get('profile/viewlogo', 'ProfileController@viewlogo');
   Route::resource('profile', 'ProfileController');
   Route::resource('mobile', 'MobileController');
@@ -48,12 +48,14 @@ Route::group(['middleware' => 'web'], function() {
   Route::get('feedback/view', 'FeedbackController@view');
   Route::resource('feedback', 'FeedbackController');
   Route::get('account/customer', 'AccountController@customer');
+  Route::get('account/viewcustomer', 'AccountController@viewcustomer');
   Route::get('account/admin', 'AccountController@admin');
   Route::get('account/createcustomer', 'AccountController@createcustomer');
   Route::get('account/createadmin', 'AccountController@createadmin');
   Route::get('account/viewadmin', 'AccountController@viewadmin');
   Route::resource('account', 'AccountController');
-    Route::get('education/editeducation', 'EducationController@editeducation');
+  Route::get('education/vieweducation', 'EducationController@vieweducation');
+  Route::get('education/editeducation', 'EducationController@editeducation');
   Route::get('education/createeducation', 'EducationController@createeducation');
   Route::resource('education', 'EducationController');
 
