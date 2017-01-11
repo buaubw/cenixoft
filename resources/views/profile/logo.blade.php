@@ -8,7 +8,7 @@
 
 <div class="container" style="padding-top:50px;">
   <div class="col-md-2">
-<button type="button" class="btn btn-block btn-warning">Create</button>
+<a href="{{url('profile/createlogo')}}"  class="btn btn-block btn-warning">Create</a>
 </div>
 
   <div class="row" style="padding-top:50px;">
@@ -47,7 +47,7 @@
               <td><span class="label label-success">Approved</span></td>
               <td>.</td>
               <td><a href="{{url('profile/viewlogo')}}"><i class="fa fa-eye"></i> </a></td>
-              <td><a><i class="fa fa-edit"></i> </a></td>
+              <td><a href="{{url('profile/editlogo')}}"><i class="fa fa-edit"></i> </a></td>
               <td><a><i class="fa fa-times"></i> </a></td>
             </tr>
 

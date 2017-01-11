@@ -15,7 +15,7 @@
     <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Create Logo design</h3>
+          <h3 class="box-title">Edit Logo design</h3>
           <div class="box-body ">
             <div class="form-group">
             <div class="row" style="padding-top:10px;">

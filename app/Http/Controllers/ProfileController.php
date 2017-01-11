@@ -31,17 +31,17 @@ class ProfileController extends Controller
     {
         return view('profile.logo');
     }
+    public function editlogo()
+    {
+        return view('profile.editlogo');
+    }
     public function viewlogo()
     {
-        return view('logo.viewlogo');
+        return view('profile.viewlogo');
     }
-    public function viewmobile()
+    public function createlogo()
     {
-        return view('profile.viewmobile');
-    }
-    public function viewwebsite()
-    {
-        return view('profile.viewwebsite');
+        return view('profile.createlogo');
     }
 
 
