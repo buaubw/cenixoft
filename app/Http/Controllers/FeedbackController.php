@@ -38,7 +38,20 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $feedback = new feedback;
+
+      $feedback->profile_id = $request->profile_id;
+      $feedback->fullname = $request->fullname;
+      $feedback->suggestion = $request->suggestion;
+      $feedback->convinience = $request->convinience;
+      $feedback->ontime = $request->ontime;
+      $feedback->price = $request->price;
+      $feedback->complacency = $request->complacency;
+      $feedback->date= $request->date;
+
+
+      $customer->save();
+
     }
 
     /**

@@ -64,7 +64,17 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $profile = new profile;
+
+      $profile->name = $request->name;
+      $profile->customer_id = $request->customer_id;
+      $profile->date = $request->date;
+      $profile->by = $request->by;
+
+
+
+      $customer->save();
+
     }
 
     /**

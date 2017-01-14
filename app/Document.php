@@ -8,5 +8,5 @@ class Document extends Model
 {
   protected $table = 'documents';
   protected $primaryKey ='id';
-  protected $fillable = ['filename','profile_id','type,date,by'];
+  protected $fillable = ['filename','profile_id','type,date,'];
 }

@@ -103,7 +103,17 @@ class DocumentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $document = new document;
+
+      $document->filename = $request->filename;
+      $document->profile_id = $request->profile_id;
+      $document->type = $request->type;
+      $document->date= $request->date;
+      $feedback->by = $request->by;
+      
+
+      $customer->save();
+
     }
 
     /**
