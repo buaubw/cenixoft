@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App;
+use App\Education;
+use DateTime;
 
 class EducationController extends Controller
 {
@@ -13,8 +17,10 @@ class EducationController extends Controller
      */
     public function index()
     {
+      $educations = Education::all();
 
-        return view('education.education');
+      return view('education.education')->with('values', $educations);
+
 
     }
 
@@ -30,12 +36,13 @@ class EducationController extends Controller
     }
     public function editeducation()
     {
+
          return view('education.editeducation');
 
     }
     public function vieweducation()
     {
-         return view('education.vieweducation');
+         return ('education.vieweducation');
 
     }
 
@@ -48,15 +55,16 @@ class EducationController extends Controller
     public function store(Request $request)
     {
       $education = new Education;
+      $now = new DateTime();
 
       $education->url = $request->url;
       $education->type = $request->type;
-      $education->date = $request->date;
+      $education->date = $now;
       $education->description = $request->description;
-      $education->by = $request->by;
+      $education->by ="test";
 
       $education->save();
-      return redirect()->route('education/index');
+      return redirect()->route('education.index');
     }
 
     /**
@@ -78,7 +86,11 @@ class EducationController extends Controller
      */
     public function edit($id)
     {
-        //
+      $education = Education::find($id);
+
+       // show the edit form and pass the nerd
+       return view('education.edit')
+           ->with('value', $education);
     }
 
     /**
@@ -96,8 +108,8 @@ class EducationController extends Controller
       $education->date = $request->date;
       $education->description = $request->description;
       $education->by = $request->by;
-      $flight->save();
-      return redirect()->route('education/index');
+      $education->save();
+      return redirect()->route('education.index');
 
     }
 

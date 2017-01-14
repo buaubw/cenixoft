@@ -33,29 +33,37 @@
           <table class="table table-hover">
             <tr>
               <th>No</th>
-              <th>Username</th>
-              <th>Password</th>
+              <th>Name</th>
+              <th>URL</th>
+              <th>Description</th>
               <th>Date Time</th>
               <th>By</th>
               <th>View</th>
               <th>Edit</th>
               <th>Remove</th>
             </tr>
+
+            @foreach($values as $value)
+
+
             <tr>
-              <td>001</td>
-              <td>Logo Design</td>
-              <td>11-7-2014</td>
-              <td>Bua</span></td>
-              <td>11-7-2014</td>
+              <td></td>
+              <td>{{$value->type}}</td>
+              <td>{{$value->url}}</td>
+                <td>{{$value->description}}</td>
+              <td>{{$value->date}}</td>
+              <td>{{$value->by}}</td>
               <td><a href="{{url('education/vieweducation')}}"><i class="fa fa-eye"></i> </a></td>
-              <td><a href="{{url('education/editeducation')}}"><i class="fa fa-edit"></i> </a></td>
+              <td><a href= {{url('education/'.  $value->id .'/edit')}} ><i class="fa fa-edit"></i> </a></td>
               <td><a ><i class="fa fa-remove"></i> </a>
               </td>
-                <script>
+
 
               </td>
             </tr>
 
+
+@endforeach
           </table>
         </div>
         <!-- /.box-body -->
