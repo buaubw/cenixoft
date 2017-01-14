@@ -36,9 +36,18 @@ class CustomerController extends Controller
     {
         $customer = new Customer;
 
-        $flight->name = $request->name;
+        $customer->firstname = $request->firstname;
+        $customer->lastname = $request->lastname;
+        $customer->companyname = $request->companyname;
+        $customer->address = $request->address;
+        $customer->tel = $request->tel;
+        $customer->fax = $request->fax;
+        $customer->email = $request->email;
+        $customer->password = $request->password;
+        $customer->taxno = $request->taxno;
+        $customer->date = $request->date;
 
-        $flight->save();
+        $customer->save();
     }
 
     /**
