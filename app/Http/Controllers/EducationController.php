@@ -94,6 +94,7 @@ class EducationController extends Controller
       $education->url = $request->url;
       $education->type = $request->type;
       $education->date = $request->date;
+      $education->description = $request->description;
       $education->by = $request->by;
       $flight->save();
       return redirect()->route('education/index');

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Subproject extends Model
 {
-  protected $table = 'subproject';
+  protected $table = 'subprojects';
   protected $primaryKey ='id';
-  protected $fillable = ['name,type,date,by,profile_id'];
+  protected $fillable = ['name','type','date','by','profile_id'];
 }
