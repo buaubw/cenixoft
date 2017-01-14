@@ -57,7 +57,7 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
     }
 
     /**

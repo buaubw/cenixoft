@@ -13,6 +13,7 @@ class EducationController extends Controller
      */
     public function index()
     {
+
         return view('education.education');
 
     }
@@ -34,9 +35,9 @@ class EducationController extends Controller
     }
     public function vieweducation()
     {
-       return view('education.vieweducation');
+         return view('education.vieweducation');
 
-    }  
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -46,7 +47,16 @@ class EducationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $education = new Education;
+
+      $education->url = $request->url;
+      $education->type = $request->type;
+      $education->date = $request->date;
+      $education->description = $request->description;
+      $education->by = $request->by;
+
+      $education->save();
+      return redirect()->route('education/index');
     }
 
     /**
@@ -80,7 +90,14 @@ class EducationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $education = App\Education::find($id);
+      $education->url = $request->url;
+      $education->type = $request->type;
+      $education->date = $request->date;
+      $education->by = $request->by;
+      $flight->save();
+      return redirect()->route('education/index');
+
     }
 
     /**
@@ -91,6 +108,11 @@ class EducationController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $education = App\Education::find($id);
+
+      $education->delete();
+
+      return redirect()->route('education/index');
+
     }
 }

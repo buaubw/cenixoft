@@ -8,5 +8,5 @@ class Education extends Model
 {
   protected $table = 'educations';
   protected $primaryKey ='id';
-  protected $fillable = ['url,type,date,by,tel,fax,email,password,taxno,date'];
+  protected $fillable = ['url,type,date,by'];
 }
