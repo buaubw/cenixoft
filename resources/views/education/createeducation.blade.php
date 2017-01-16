@@ -26,7 +26,7 @@
                 <label for="type" >Name</label>
               </div>
               <div class="col-md-6">
-                <input class="form-control" type="text" id="type"  name="type" value="" placeholder="Name">
+                <input class="form-control" type="text" id="type"  name="type" value="" placeholder="Name" value="{{ old('type') }}">
               </div>
 
             </div>
@@ -35,7 +35,7 @@
                 <label for="url" >URL</label>
               </div>
               <div class="col-md-6">
-                  <input class="form-control" type="text" id="url"  name="url"  placeholder="URL">
+                  <input class="form-control" type="text" id="url"  name="url"  placeholder="URL" {{ old('url') }}>
               </div>
 
             </div>
@@ -44,7 +44,7 @@
                 <label for="name" >Description</label>
               </div>
               <div class="col-md-6">
-<textarea class="form-control" rows="5" id="description" name="description"></textarea>
+<textarea class="form-control" rows="5" id="description" name="description"> {{ old('description') }} </textarea>
               </div>
 
             </div>

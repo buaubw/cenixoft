@@ -5,24 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App;
-use App\Website;
+use App\Logo;
 use App\Customer;
 use DateTime;
 use File;
 use Storage;
-class WebsiteController extends Controller
+
+class LogoController extends Controller
 {
+
   public function index(){
 
-    $website = Website::all();
+    $logo = Logo::all();
 
-     return view('website.index')->with('values', $website);
+     return view('logo.index')->with('values', $logo);
     // return view('project.index');
   }
   public function create()
   {
 
-        return view('website.create');
+        return view('logo.create');
   }
 
   /**
@@ -47,21 +49,21 @@ class WebsiteController extends Controller
         $extension2 = $file2->getClientOriginalName();
         $upload_success2 = $file2->move($destinationPath2, $extension2);
 
-        $website = new Website;
-        $website->customername = $request->customername;
-        $website->customerlogo = $extension;
+        $logo = new Logo;
+        $logo->customername = $request->customername;
+        $logo->customerlogo = $extension;
 
-        $website->tools = $request->tools;
-        $website->description = $request->description;
+        $logo->tools = $request->tools;
+        $logo->description = $request->description;
 
-        $website->picture =$extension2;
-        $website->date = $now;
-        $website->by = "test";
+        $logo->picture =$extension2;
+        $logo->date = $now;
+        $logo->by = "test";
 
-        $website->save();
-        return redirect()->route('website.index');
+        $logo->save();
+        return redirect()->route('project.index');
   }else{
-      return redirect()->route('website.create');
+      return redirect()->route('project.create');
   }
   }
 
@@ -84,10 +86,10 @@ class WebsiteController extends Controller
    */
   public function edit($id)
   {
-    $website = Website::find($id);
+    $logo = Logo::find($id);
 
-     return view('website.edit')
-         ->with('value', $website);
+     return view('logo.edit')
+         ->with('value', $logo);
 
   }
 
@@ -100,7 +102,7 @@ class WebsiteController extends Controller
    */
   public function update(Request $request, $id)
   {
-    $website = App\Website::find($id);
+    $logo = App\Logo::find($id);
 
     $extension="";
     $extension2="";
@@ -122,26 +124,27 @@ class WebsiteController extends Controller
     $destinationPath2 = 'LogoImage';
     $extension2 = $file2->getClientOriginalName();
     $upload_success2 = $file2->move($destinationPath2, $extension2);
+
     }
     if($upload_success){
-     $website->customerlogo =$extension;
+     $logo->customerlogo =$extension;
    }else{
-     $website->customerlogo = $website->customerlogo;
+     $logo->customerlogo = $logo->customerlogo;
    }
     if($upload_success2){
-      $website->picture = $request->picture;
+      $logo->picture = $request->picture;
    }else{
-     $website->picture=$website->picture;
+     $logo->picture=$logo->picture;
    }
 
-    $website->customername = $request->customername;
-    $website->tools = $request->tools;
-    $website->description = $request->description;
-    $website->date = $request->date;
-    $website->by = $request->by;
-    $website->save();
+    $logo->customername = $request->customername;
+    $logo->tools = $request->tools;
+    $logo->description = $request->description;
+    $logo->date = $request->date;
+    $logo->by = $request->by;
+    $logo->save();
 
-    return redirect()->route('website.index');
+    return redirect()->route('logo.index');
   }
 
   /**
@@ -152,14 +155,18 @@ class WebsiteController extends Controller
    */
   public function destroy($id)
   {
-    $website = App\Website::find($id);
-    unlink ('LogoImages/' . $website->customerlogo);
-    File::delete('LogoImages/' . $website->picture);
+    $logo = App\Logo::find($id);
+    unlink ('LogoImages/' . $logo->customerlogo);
+    File::delete('LogoImages/' . $logo->picture);
 
-    $website->delete();
+    $logo->delete();
 
-    return redirect()->route('website.index');
+    return redirect()->route('logo.index');
   }
+
+
+
+
 
 
 }

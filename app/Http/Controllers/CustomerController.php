@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App;
+use App\Customer;
+use DateTime;
 
 class CustomerController extends Controller
 {
@@ -13,7 +16,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+      $customers = Customer::all();
+
+      return view('customer.index')->with('values', $customers);
     }
 
     /**
@@ -23,7 +28,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+         return view('customer.create');
     }
 
     /**
@@ -34,20 +39,32 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+             'firstname' => 'required|max:255',
+             'lastname' => 'required',
+             'companyname' => 'required',
+             'password' => 'required'
+         ]);
+         if( $request->password!==$request->confirmpassword){
+           return view('customer.create')->withInput();
+         }
         $customer = new Customer;
-
+        $now = new DateTime();
         $customer->firstname = $request->firstname;
         $customer->lastname = $request->lastname;
         $customer->companyname = $request->companyname;
-        $customer->address = $request->address;
-        $customer->tel = $request->tel;
-        $customer->fax = $request->fax;
-        $customer->email = $request->email;
+        $customer->username = $request->username;
+        // $customer->address = $request->address;
+        // $customer->tel = $request->tel;
+        // $customer->fax = $request->fax;
+
         $customer->password = $request->password;
-        $customer->taxno = $request->taxno;
-        $customer->date = $request->date;
+        // $customer->taxno = $request->taxno;
+        $customer->date =$now;
+        $customer->by ="by";
 
         $customer->save();
+        return redirect()->route('customer.index');
     }
 
     /**
@@ -56,11 +73,17 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function viewe($id)
+    {
+      $customer = Customer::find($id);
+
+       return view('$customer.viewe')
+           ->with('value', $customer);
+    }
     public function show($id)
     {
-        //
+    //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -69,7 +92,10 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+      $customer = Customer::find($id);
+
+       return view('customer.edit')
+           ->with('value', $customer);
     }
 
     /**
@@ -81,9 +107,20 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
-
+      $customer = App\Customer::find($id);
+      $customer->firstname = $request->firstname;
+      $customer->lastname = $request->lastname;
+      $customer->companyname = $request->companyname;
+      $customer->address = $request->address;
+      $customer->tel = $request->tel;
+      $customer->fax = $request->fax;
+      $customer->email = $request->email;
+      $customer->password = $request->password;
+      $customer->taxno = $request->taxno;
+      $customer->date = $request->date;
+      $customer->save();
+      return redirect()->route('customer.index');
+}
     /**
      * Remove the specified resource from storage.
      *
@@ -92,6 +129,8 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $customer = Customer::find($id);
+      $customer->delete();
+      return redirect()->route('customer.index');
     }
 }

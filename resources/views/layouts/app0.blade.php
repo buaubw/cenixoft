@@ -17,8 +17,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
     <!-- Theme style -->
     <link rel="stylesheet" href="../../public/dist/css/AdminLTE.min.css">
+      <link rel="stylesheet" href="../../public/css/style.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../../public/dist/css/skins/_all-skins.min.css">
@@ -140,6 +142,13 @@
 
         </li>
         <li class="treeview">
+        <a href="{{ url('=project') }}">
+            <i class="fa fa-paste"></i> <span>Project</span>
+
+          </a>
+
+        </li>
+        <li class="treeview">
           <a href="{{ url('document') }}">
             <i class="fa fa-file-text-o"></i>
             <span> Document Store</span>
@@ -168,7 +177,7 @@
                 </a>
                 <ul class="treeview-menu">
                   <li class="">
-                  <a href="{{url('account/customer')}}" >
+                  <a href="{{url('customer')}}" >
                   <i class="fa fa-minus"></i> Customer </a>
                   </li>
                   <li>

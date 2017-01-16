@@ -1,4 +1,4 @@
-@extends('layouts.app0')
+@extends('layouts.app00')
 
 @section('content')
 
@@ -19,7 +19,8 @@
                 <label for="No" >Name</label>
                 </div>
                   <div class="col-md-8">
-                    <input class="form-control" type="text" id="name"  name="name" value="" placeholder="Name.">
+                    {{$value->type}}
+                    <!-- <input class="form-control" type="text" id="name"  name="name" value="" placeholder="Name."> -->
                   </div>
                     </div>
                       <div class="row" style="padding-top:10px;">
@@ -27,7 +28,7 @@
                     <label for="username">File</label>
                     </div>
                   <div class="col-md-8">
-                    <input class="form-control" type="text" id="file"  name="file" value="" placeholder="File">
+                    <iframe width="300" height="200" src="{{$value->url}}" frameborder="0" allowfullscreen></iframe>
                   </div>
                     </div>
                     <div class="row" style="padding-top:10px;">
@@ -35,7 +36,7 @@
                     <label for="username">Description</label>
                     </div>
                     <div class="col-md-8">
-                    <input class="form-control" type="text" id="description"  name="description" value="" placeholder="Description">
+                    {{$value->description}}
                     </div>
                     </div>
                       <div class="row" style="padding-top:10px;">
@@ -43,7 +44,7 @@
                           <label for="name" >By</label>
                         </div>
                         <div class="col-md-8">
-                          <input class="form-control" type="text" id="by"  name="by" value="" placeholder="By">
+                          {{$value->by}}
                         </div>
                           </div>
                           <div class="row" style="padding-top:10px;">
@@ -51,7 +52,7 @@
                           <label for="username">Date Time</label>
                           </div>
                           <div class="col-md-8">
-                          <input class="form-control" type="text" id="date time"  name="date time" value="" placeholder="Date Time">
+                          {{$value->date}}
                           </div>
                           </div>
 

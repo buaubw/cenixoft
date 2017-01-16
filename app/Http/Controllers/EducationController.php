@@ -40,9 +40,14 @@ class EducationController extends Controller
          return view('education.editeducation');
 
     }
-    public function vieweducation()
+    public function vieweducation($id)
     {
-         return ('education.vieweducation');
+      $education = Education::find($id);
+
+       // show the edit form and pass the nerd
+       return view('education.vieweducation')
+           ->with('value', $education);
+        //  return view('education.vieweducation');
 
     }
 
@@ -125,7 +130,7 @@ class EducationController extends Controller
 
       $education->delete();
 
-      return redirect()->route('education/index');
+      return redirect()->route('education.index');
 
     }
 }

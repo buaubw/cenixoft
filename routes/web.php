@@ -29,6 +29,10 @@ Route::group(['middleware' => 'web'], function() {
   Route::get('profile/editlogo', 'ProfileController@editlogo');
   Route::get('profile/viewlogo', 'ProfileController@viewlogo');
   Route::resource('profile', 'ProfileController');
+  Route::resource('project', 'ProjectController');
+  Route::resource('logo', 'LogoController');
+    Route::resource('website', 'WebsiteController');
+      Route::resource('mobile', 'MobileController');
   // Route::resource('mobile', 'MobileController');
   // Route::resource('design', 'DesignController');
   Route::get('document/requirement', 'documentController@requirement');
@@ -55,7 +59,8 @@ Route::group(['middleware' => 'web'], function() {
   Route::get('account/createadmin', 'AccountController@createadmin');
   Route::get('account/viewadmin', 'AccountController@viewadmin');
   Route::resource('account', 'AccountController');
-  Route::get('education/vieweducation', 'EducationController@vieweducation');
+  Route::resource('customer', 'CustomerController');
+  Route::get('education/{id}/vieweducation', 'EducationController@vieweducation');
   Route::get('education/editeducation', 'EducationController@editeducation');
   Route::get('education/createeducation', 'EducationController@createeducation');
   Route::resource('education', 'EducationController');

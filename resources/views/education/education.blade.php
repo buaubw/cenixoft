@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="content-wrapper" style="height:1000px;">
+<div class="content-wrapper" style="height:600px;">
 
 
 <div class="container" style="padding-top:20px;">
@@ -42,27 +42,96 @@
               <th>Edit</th>
               <th>Remove</th>
             </tr>
-
+              <?php $count =1 ?>
             @foreach($values as $value)
 
 
             <tr>
-              <td></td>
+              <td>{{$count}}</td>
               <td>{{$value->type}}</td>
-              <td>{{$value->url}}</td>
+              <td>
+                <div >
+                  <iframe width="300" height="200" src="{{$value->url}}" frameborder="0" allowfullscreen></iframe>
+
+              </div>
+                </td>
                 <td>{{$value->description}}</td>
               <td>{{$value->date}}</td>
               <td>{{$value->by}}</td>
-              <td><a href="{{url('education/vieweducation')}}"><i class="fa fa-eye"></i> </a></td>
-              <td><a href= {{url('education/'.  $value->id .'/edit')}} ><i class="fa fa-edit"></i> </a></td>
-              <td><a ><i class="fa fa-remove"></i> </a>
+              <td><a href= {{url('education/'.  $value->id .'/vieweducation')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
+              <td><a href= {{url('education/'.  $value->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td>
+              <td>
+                  <button id="myBtn{{$value->id}}" class="btn btn-danger"><i class="fa fa-remove"></i></button>
+                  <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                      <div class="modal-content" >
+                      <span class="close">&times;</span>
+                      <p>ยืนยันการลบข้อมูล</p>
+                      <table>
+                        <tr>
+                          <td style="padding:10px;"> <button type="button" class="btn btn-danger " id="closex" style="display: inline-block;"><i class="fa fa-remove "></button></td>
+                          <td style="padding:10px;">  <form action="education/{{ $value->id }}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+
+                          <button onclick="myFunction()" class="btn btn-success" style="display: inline-block;"><i class="fa fa-check"></i></button>
+                            </form>
+                          </td>
+
+                        </tr>
+
+
+
+                         </table>
+                    </div>
+
+                    </div>
+
+
+
+        <script>
+        var modal = document.getElementById('myModal');
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn{{$value->id}}");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  var closex = document.getElementById("closex");
+  // When the user clicks the button, open the modal
+  btn.onclick = function() {
+      modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+      modal.style.display = "none";
+  }
+  closex.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+    // function Functionclose() {
+    //
+    //          window.close();
+    //          $('#myModal').dialog("close").
+    //
+    // }
+    </script>
               </td>
 
 
               </td>
             </tr>
 
-
+<?php $count++ ?>
 @endforeach
           </table>
         </div>

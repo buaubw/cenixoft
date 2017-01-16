@@ -2,55 +2,56 @@
 
 @section('content')
 
-<div class="content-wrapper" style="height:1000px;">
+<div class="content-wrapper" style="height:600px;">
 
 
-
-<div class="container" style="padding-top:50px;">
+<div class="container" style="padding-top:20px;">
+    <h3 class="box-title">Project</h3>
   <div class="col-md-2">
-<a href="{{url('mobile/create')}}"  class="btn btn-block btn-warning">Create</a>
+<!-- <a href="{{ url('profile/create') }}" class="btn btn-block btn-warning">Create</a> -->
+<a href="{{url('project/create')}}" class="btn btn-warning" style=" margin-left: 0px">Create</a>
 </div>
 
   <div class="row" style="padding-top:50px;">
-    <div class="col-xs-11 col-md-11">
+    <div class="col-xs-10 col-md-11">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Mobile</h3>
 
-          <div class="box-tools">
-            <div class="input-group input-group-sm" style="width: 150px;">
-              <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-              <div class="input-group-btn">
-                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-              </div>
-            </div>
-          </div>
         </div>
         <!-- /.box-header -->
         <div class="box-body table-responsive no-padding">
           <table class="table table-hover">
             <tr>
               <th>No</th>
-              <th>Custome Name</th>
-              <th>Picture</th>
+              <th>Project Name</th>
+              <th>Customer Name</th>
+              <th>Type</th>
               <th>Date Time</th>
               <th>By</th>
-              <th>View</th>
+              <!-- <th>View</th> -->
               <th>Edit</th>
-              <th>Remove </th>
+              <th>Remove</th>
             </tr>
               <?php $count =1 ?>
-              @foreach($values as $value)
-            <tr>
-                <td>{{$count}}</td>
-              <td>{{$value->customername}}</td>
-              <td><img src="LogoImage/{{$value->customerlogo}}" style="width:50px;height:auto;"></td>
-              <td>{{$value->date}}</td>
-                <td>{{$value->by}}</td>
-                <td><a href= {{url('logo/'.  $value->id .'/show')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
-                <td><a href= {{url('logo/'.  $value->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td>
+            @foreach($values as $value)
 
+
+            <tr>
+              <td>{{$count}}</td>
+              <td>{{$value->name}}</td>
+
+              <td>
+                @foreach($customers as $customer)
+              @if($customer->id==$value->customer_id)
+                {{$customer->companyname}}
+              @endif
+              @endforeach
+              </td>
+              <td>{{$value->type}}</td>
+              <td>{{$value->date}}</td>
+              <td>{{$value->by}}</td>
+              <!-- <td><a href= {{url('project/'.  $value->id .'/vieweducation')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td> -->
+              <td><a href= {{url('project/'.  $value->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td>
               <td>
                   <button id="myBtn{{$value->id}}" class="btn btn-danger"><i class="fa fa-remove"></i></button>
                   <div id="myModal" class="modal">
@@ -62,7 +63,7 @@
                       <table>
                         <tr>
                           <td style="padding:10px;"> <button type="button" class="btn btn-danger " id="closex" style="display: inline-block;"><i class="fa fa-remove "></button></td>
-                          <td style="padding:10px;">  <form action="logo/{{ $value->id }}" method="POST">
+                          <td style="padding:10px;">  <form action="project/{{ $value->id }}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
 
@@ -109,7 +110,12 @@
           modal.style.display = "none";
       }
   }
-
+    // function Functionclose() {
+    //
+    //          window.close();
+    //          $('#myModal').dialog("close").
+    //
+    // }
     </script>
               </td>
 
@@ -119,7 +125,6 @@
 
 <?php $count++ ?>
 @endforeach
-
           </table>
         </div>
         <!-- /.box-body -->

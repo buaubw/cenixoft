@@ -13,11 +13,11 @@
 </div>
 
     <div class="col-xs-10 col-md-10">
-        <form action="{{ action('WebsiteController@store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ action('LogoController@store') }}" method="POST" enctype="multipart/form-data">
               {{ csrf_field() }}
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Create Website</h3>
+          <h3 class="box-title">Create Logo design</h3>
           <div class="box-body ">
             <div class="form-group">
             <div class="row" style="padding-top:10px;">
