@@ -73,17 +73,14 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function viewe($id)
+    public function show($id)
     {
       $customer = Customer::find($id);
 
-       return view('$customer.viewe')
+       return view('customer.show')
            ->with('value', $customer);
     }
-    public function show($id)
-    {
-    //
-    }
+
     /**
      * Show the form for editing the specified resource.
      *

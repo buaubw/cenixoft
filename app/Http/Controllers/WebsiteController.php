@@ -73,7 +73,10 @@ class WebsiteController extends Controller
    */
   public function show($id)
   {
-      //
+    $website = Website::find($id);
+
+     return view('website.show')
+         ->with('value', $website);
   }
 
   /**

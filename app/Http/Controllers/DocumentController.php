@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App;
+use App\Document;
+use App\Project;
+use App\Customer;
+use DateTime;
 class DocumentController extends Controller
 {
     /**
@@ -13,8 +17,12 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        return view('document.index');
-        //
+
+      $projects = Project::all();
+      $customers = Customer::all();
+
+       return view('document.index')->with('values', $projects)->with('customers',$customers);
+
     }
     public function requirement()
     {
@@ -86,6 +94,11 @@ class DocumentController extends Controller
         return view('document.editquotation');
         //
     }
+    public function project($id)
+    {
+
+        return view('document.project');
+    }
 
 
     /**
@@ -110,7 +123,7 @@ class DocumentController extends Controller
       $document->type = $request->type;
       $document->date= $request->date;
       $feedback->by = $request->by;
-      
+
 
       $customer->save();
 

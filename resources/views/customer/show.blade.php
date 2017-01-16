@@ -16,10 +16,10 @@
 
             <div class="row" style="padding-top:10px;">
               <div class="col-md-2" style="text-align:right;">
-                <label for="No" >No.</label>
+                <label for="id" >ID</label>
                 </div>
                   <div class="col-md-8">
-                    <input class="form-control" type="text" id="no"  name="no" value="" placeholder="No.">
+                    {{$value->id}}
                   </div>
                     </div>
                       <div class="row" style="padding-top:10px;">
@@ -27,102 +27,100 @@
                     <label for="username">User Name</label>
                     </div>
                   <div class="col-md-8">
-                    <input class="form-control" type="text" id="username"  name="username" value="" placeholder="User Name">
+                    {{$value->username}}
                   </div>
                     </div>
-                    <div class="row" style="padding-top:10px;">
-                    <div class="col-md-2" style="text-align:right;">
-                    <label for="username">Password</label>
-                    </div>
-                    <div class="col-md-8">
-                    <input class="form-control" type="text" id="password"  name="password" value="" placeholder="Password">
-                    </div>
-                    </div>
+
                       <div class="row" style="padding-top:10px;">
                         <div class="col-md-2" style="text-align:right;">
                           <label for="name" >First Name</label>
                         </div>
                         <div class="col-md-8">
-                          <input class="form-control" type="text" id="First name"  name="First name" value="" placeholder="First Name">
+                        {{$value->firstname}}
                         </div>
                           </div>
                           <div class="row" style="padding-top:10px;">
                           <div class="col-md-2" style="text-align:right;">
-                          <label for="username">Last Name</label>
+                          <label for="lastname">Last Name</label>
                           </div>
                           <div class="col-md-8">
-                          <input class="form-control" type="text" id="lastname"  name="lastname" value="" placeholder="Last Name">
+
+                          {{$value->lastname}}
                           </div>
                           </div>
                           <div class="row" style="padding-top:10px;">
                             <div class="col-md-2" style="text-align:right;">
-                              <label for="name" >Company Name</label>
+                              <label for="companyname" >Company Name</label>
                             </div>
                             <div class="col-md-8">
-                              <input class="form-control" type="text" id="company name"  name="company name" value="" placeholder="Company Name">
+                                {{$value->companyname}}
                             </div>
                               </div>
                               <div class="row" style="padding-top:10px;">
                             <div class="col-md-2" style="text-align:right;">
-                              <label for="username">Address</label>
+                              <label for="address">Address</label>
                             </div>
                             <div class="col-md-8">
-                              <input class="form-control" type="text" id="address"  name="address" value="" placeholder="Address">
+
+                              {{$value->address}}
                             </div>
                               </div>
                               <div class="row" style="padding-top:10px;">
                           <div class="col-md-2" style="text-align:right;">
-                            <label for="username">E-Mail</label>
+                            <label for="email">E-Mail</label>
                             </div>
                           <div class="col-md-8">
-                            <input class="form-control" type="text" id="e-mail"  name="e-mail" value="" placeholder="E-Mail">
+
+                              {{$value->email}}
                           </div>
                             </div>
                             <div class="row" style="padding-top:10px;">
                         <div class="col-md-2" style="text-align:right;">
-                          <label for="username">Tel</label>
+                          <label for="tel">Tel</label>
                           </div>
                         <div class="col-md-8">
-                          <input class="form-control" type="text" id="tel"  name="tel" value="" placeholder="Tel">
+
+                          {{$value->tel}}
                         </div>
                           </div>
                           <div class="row" style="padding-top:10px;">
                           <div class="col-md-2" style="text-align:right;">
-                          <label for="username">Fax</label>
+                          <label for="Fax">Fax</label>
                           </div>
                           <div class="col-md-8">
-                          <input class="form-control" type="text" id="fax"  name="fax" value="" placeholder="Fax">
+
+                            {{$value->fax}}
                           </div>
                           </div>
                           <div class="row" style="padding-top:10px;">
                           <div class="col-md-2" style="text-align:right;">
-                          <label for="username">No.Tex</label>
+                          <label for="taxno">No.Tex</label>
                           </div>
                           <div class="col-md-8">
-                          <input class="form-control" type="text" id="no.tex"  name="no.tex" value="" placeholder="No.Tex">
+                            {{$value->taxno}}
                           </div>
                           </div>
                           <div class="row" style="padding-top:10px;">
                             <div class="col-md-2" style="text-align:right;">
-                              <label for="username">By</label>
+                              <label for="by">By</label>
                             </div>
                             <div class="col-md-8">
-                              <input class="form-control" type="text" id="by"  name="by" value="" placeholder="By">
+                              {{$value->by}}
                             </div>
                           </div>
                           <div class="row" style="padding-top:10px;">
                           <div class="col-md-2" style="text-align:right;">
-                          <label for="username">Date Time</label>
+                          <label for="date">Date Time</label>
                           </div>
                           <div class="col-md-8">
-                          <input class="form-control" type="text" id="date time"  name="date time" value="" placeholder="Date Time">
+                            {{$value->date}}
                           </div>
                           </div>
 
 
 
                               <div  style="text-align:center;padding-top:20px;" >
-                                <a href="{{url('account/customer')}}" class="btn btn-primary">Back</a>
+                                <a href="{{url('customer')}}" class="btn btn-primary">Back</a>
                               </div>
                           </div>
 

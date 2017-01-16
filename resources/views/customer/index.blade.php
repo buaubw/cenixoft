@@ -14,7 +14,7 @@
 
 </div>
   <div class="row" style="padding-top:50px;">
-    <div class="col-xs-10 col-md-10">
+    <div class="col-xs-12 col-md-10">
       <div class="box">
         <div class="box-header">
           <h3 class="box-title"></h3>
@@ -52,7 +52,7 @@
               <td>{{$value->lastname}}</span></td>
               <td>{{$value->date}}</span></td>
               <td>{{$value->by}}</td>
-              <td style="text-align: center;"><a href="{{url('account/viewcustomer')}}" class="btn btn-primary"><i class="fa fa-eye"></i></td>
+                <td><a href= {{url('customer/'.  $value->id .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
                 <td>
                     <button id="myBtn{{$value->id}}" class="btn btn-danger"><i class="fa fa-remove"></i></button>
                     <div id="myModal" class="modal">
@@ -64,7 +64,7 @@
                         <table>
                           <tr>
                             <td style="padding:10px;"> <button type="button" class="btn btn-danger " id="closex" style="display: inline-block;"><i class="fa fa-remove "></button></td>
-                            <td style="padding:10px;">  <form action="education/{{ $value->id }}" method="POST">
+                            <td style="padding:10px;">  <form action="customer/{{ $value->id }}" method="POST">
                               {{ csrf_field() }}
                               {{ method_field('DELETE') }}
 

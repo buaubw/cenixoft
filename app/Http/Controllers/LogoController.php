@@ -75,7 +75,10 @@ class LogoController extends Controller
    */
   public function show($id)
   {
-      //
+    $logo = Logo::find($id);
+
+     return view('logo.show')
+         ->with('value', $logo);
   }
 
   /**
@@ -156,7 +159,7 @@ class LogoController extends Controller
   public function destroy($id)
   {
     $logo = App\Logo::find($id);
-    
+
     File::delete('LogoImages/' . $logo->picture);
 
     $logo->delete();

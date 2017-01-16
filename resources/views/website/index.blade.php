@@ -48,7 +48,7 @@
               <td><img src="LogoImage/{{$value->customerlogo}}" style="width:50px;height:auto;"></td>
               <td>{{$value->date}}</td>
                 <td>{{$value->by}}</td>
-                <td><a href= {{url('website/'.  $value->id .'/show')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
+                <td><a href= {{url('website/'.  $value->id .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
                 <td><a href= {{url('website/'.  $value->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td>
 
               <td>

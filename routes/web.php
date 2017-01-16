@@ -31,10 +31,8 @@ Route::group(['middleware' => 'web'], function() {
   Route::resource('profile', 'ProfileController');
   Route::resource('project', 'ProjectController');
   Route::resource('logo', 'LogoController');
-    Route::resource('website', 'WebsiteController');
-      Route::resource('mobile', 'MobileController');
-  // Route::resource('mobile', 'MobileController');
-  // Route::resource('design', 'DesignController');
+  Route::resource('website', 'WebsiteController');
+  Route::resource('mobile', 'MobileController');
   Route::get('document/requirement', 'documentController@requirement');
   Route::get('document/contact', 'documentController@contact');
   Route::get('document/invoice', 'documentController@invoice');
@@ -49,6 +47,7 @@ Route::group(['middleware' => 'web'], function() {
   Route::get('document/editcontact', 'documentController@editcontact');
   Route::get('document/editinvoice', 'documentController@editinvoice');
   Route::get('document/editquotation', 'documentController@editquotation');
+  Route::get('document/project/{id}', 'DocumentController@project');
   Route::resource('document', 'DocumentController');
   Route::get('feedback/view', 'FeedbackController@view');
   Route::resource('feedback', 'FeedbackController');

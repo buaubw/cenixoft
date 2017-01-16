@@ -73,7 +73,8 @@ class MobileController extends Controller
    */
   public function show($id)
   {
-      //
+    $mobile = Mobile::find($id);
+      return view('mobile.show')->with('value', $mobile);
   }
 
   /**
@@ -86,7 +87,7 @@ class MobileController extends Controller
   {
     $mobile = Mobile::find($id);
     return view('mobile.edit')->with('value', $mobile);
-  
+
 
 
   }
