@@ -48,8 +48,8 @@
               <td><img src="LogoImage/{{$value->customerlogo}}" style="width:50px;height:auto;"></td>
               <td>{{$value->date}}</td>
                 <td>{{$value->by}}</td>
-                <td><a href= {{url('logo/'.  $value->id .'/show')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
-                <td><a href= {{url('logo/'.  $value->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td>
+                <td><a href= {{url('mobile/'.  $value->id .'/show')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
+                <td><a href= {{url('mobile/'.  $value->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td>
 
               <td>
                   <button id="myBtn{{$value->id}}" class="btn btn-danger"><i class="fa fa-remove"></i></button>

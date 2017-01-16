@@ -8,7 +8,7 @@
 
 <div class="container" style="padding-top:50px;">
   <div class="col-md-2">
-<a href="{{url('profile/createlogo')}}"  class="btn btn-block btn-warning">Create</a>
+<a href="{{url('logo/create')}}"  class="btn btn-block btn-warning">Create</a>
 </div>
 
   <div class="row" style="padding-top:50px;">

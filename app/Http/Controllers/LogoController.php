@@ -61,9 +61,9 @@ class LogoController extends Controller
         $logo->by = "test";
 
         $logo->save();
-        return redirect()->route('project.index');
+        return redirect()->route('logo.index');
   }else{
-      return redirect()->route('project.create');
+      return redirect()->route('logo.create') ;
   }
   }
 
@@ -156,7 +156,7 @@ class LogoController extends Controller
   public function destroy($id)
   {
     $logo = App\Logo::find($id);
-    unlink ('LogoImages/' . $logo->customerlogo);
+    
     File::delete('LogoImages/' . $logo->picture);
 
     $logo->delete();

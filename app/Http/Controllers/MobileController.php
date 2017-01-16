@@ -85,9 +85,9 @@ class MobileController extends Controller
   public function edit($id)
   {
     $mobile = Mobile::find($id);
+    return view('mobile.edit')->with('value', $mobile);
+  
 
-     return view('mobile.edit')
-         ->with('value', $mobile);
 
   }
 
@@ -154,7 +154,7 @@ class MobileController extends Controller
   public function destroy($id)
   {
     $mobile = App\Logo::find($id);
-    unlink ('MobileImage/' . $mobile->customerlogo);
+
     File::delete('MobileImage/' . $mobile->picture);
 
     $mobile->delete();

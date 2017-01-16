@@ -6,12 +6,6 @@
 
 <div class="container" style="padding-top:50px;">
 
-<!-- <a href="{{ url('profile/create') }}" class="btn btn-block btn-warning">Create</a> -->
-<div class="container" style="padding-top:20px;">
-  <div class="col-xs-10 col-md-10">
-
-</div>
-
     <div class="col-xs-10 col-md-10">
         <form method="POST" action = "{{url('/')}}/mobile/<?php echo $value->id; ?>" enctype="multipart/form-data">
             {{ csrf_field() }}
@@ -21,7 +15,7 @@
         <input type="hidden" name="date" value="{{$value->date}}" />
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Edit Logo design</h3>
+          <h3 class="box-title">Edit Mobile design</h3>
           <div class="box-body ">
             <div class="form-group">
             <div class="row" style="padding-top:10px;">
@@ -99,7 +93,7 @@
 
 </div>
 </form>
-</div>
+
 </div>
 </div>
 
