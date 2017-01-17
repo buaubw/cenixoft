@@ -21,7 +21,7 @@
         <input type="hidden" name="date" value="{{$value->date}}" />
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Edit Logo design</h3>
+          <h3 class="box-title">Edit Website Service</h3>
           <div class="box-body ">
             <div class="form-group">
             <div class="row" style="padding-top:10px;">
@@ -29,7 +29,7 @@
                 <label for="firstname" >Name</label>
               </div>
               <div class="col-md-6">
-                <input class="form-control" type="text" id="customername"  name="customername" value="{{$value->customername}}" placeholder="Customer Name">
+                <input class="form-control" type="text" id="name"  name="rname" value="{{$value->name}}" placeholder="Name">
               </div>
 
             </div>
