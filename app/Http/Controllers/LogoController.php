@@ -163,7 +163,6 @@ class LogoController extends Controller
     File::delete('LogoImages/' . $logo->picture);
 
     $logo->delete();
-
     return redirect()->route('logo.index');
   }
 
