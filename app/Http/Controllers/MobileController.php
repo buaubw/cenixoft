@@ -154,7 +154,7 @@ class MobileController extends Controller
    */
   public function destroy($id)
   {
-    $mobile = App\Logo::find($id);
+    $mobile = App\Mobile::find($id);
 
     File::delete('MobileImage/' . $mobile->picture);
 

@@ -25,7 +25,7 @@
                 <label for="customername">Customer Name</label>
               </div>
               <div class="col-md-6">
-                <input class="form-control" type="text" id="customername"  name="customername" value="" placeholder="customer name">
+                <input class="form-control" type="text" id="customername"  name="customername" value="" placeholder="name">
               </div>
 
             </div>

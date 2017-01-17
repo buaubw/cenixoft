@@ -22,10 +22,10 @@
             <div class="form-group">
             <div class="row" style="padding-top:10px;">
               <div class="col-md-2" style="text-align:right;">
-                <label for="firscustomernametname" >customer name</label>
+                <label for="firscustomernametname" >name</label>
               </div>
               <div class="col-md-6">
-                <input class="form-control" type="text" id="customername"  name="customername" value="" placeholder="customername">
+                <input class="form-control" type="text" id="customername"  name="customername" value="" placeholder="name">
               </div>
 
             </div>

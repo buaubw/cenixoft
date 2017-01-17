@@ -45,7 +45,7 @@
             <tr>
                 <td>{{$count}}</td>
               <td>{{$value->customername}}</td>
-              <td><img src="LogoImage/{{$value->customerlogo}}" style="width:50px;height:auto;"></td>
+              <td><img src="WebsiteImage/{{$value->customerlogo}}" style="width:50px;height:auto;"></td>
               <td>{{$value->date}}</td>
                 <td>{{$value->by}}</td>
                 <td><a href= {{url('website/'.  $value->id .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
@@ -62,7 +62,7 @@
                       <table>
                         <tr>
                           <td style="padding:10px;"> <button type="button" class="btn btn-danger " id="closex" style="display: inline-block;"><i class="fa fa-remove "></button></td>
-                          <td style="padding:10px;">  <form action="logo/{{ $value->id }}" method="POST">
+                          <td style="padding:10px;">  <form action="website/{{ $value->id }}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
 

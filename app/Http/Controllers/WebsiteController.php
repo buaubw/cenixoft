@@ -156,8 +156,8 @@ class WebsiteController extends Controller
   public function destroy($id)
   {
     $website = App\Website::find($id);
-    unlink ('LogoImages/' . $website->customerlogo);
-    File::delete('LogoImages/' . $website->picture);
+
+    File::delete('WebsiteImages/' . $website->picture);
 
     $website->delete();
 

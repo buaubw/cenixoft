@@ -15,7 +15,7 @@
     <div class="col-xs-11 col-md-11">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Logo design</h3>
+          <h3 class="box-title">Logo</h3>
 
           <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
@@ -53,7 +53,7 @@
 
               <td>
                   <button id="myBtn{{$value->id}}" class="btn btn-danger"><i class="fa fa-remove"></i></button>
-                  <div id="myModal" class="modal">
+                  <div id="myModal{{$value->id}}" class="modal">
 
                     <!-- Modal content -->
                       <div class="modal-content" >
@@ -62,11 +62,13 @@
                       <table>
                         <tr>
                           <td style="padding:10px;"> <button type="button" class="btn btn-danger " id="closex" style="display: inline-block;"><i class="fa fa-remove "></button></td>
-                          <td style="padding:10px;">  <form action="logo/{{ $value->id }}" method="POST">
+                          <td style="padding:10px;">
+                            
+                             <form action="logo/<?php echo $value->id; ?>" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-
-                          <button onclick="myFunction()" class="btn btn-success" style="display: inline-block;"><i class="fa fa-check"></i></button>
+                            <input type="hidden" name="id" value="{{$value->id}}" />
+                          <button type="submit" class="btn btn-success" style="display: inline-block;"><i class="fa fa-check"></i></button>
                             </form>
                           </td>
 
@@ -82,7 +84,7 @@
 
 
         <script>
-        var modal = document.getElementById('myModal');
+        var modal = document.getElementById('myModal{{$value->id}}');
 
   // Get the button that opens the modal
   var btn = document.getElementById("myBtn{{$value->id}}");

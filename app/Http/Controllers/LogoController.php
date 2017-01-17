@@ -158,12 +158,12 @@ class LogoController extends Controller
    */
   public function destroy($id)
   {
-    $logo = App\Logo::find($id);
+    $logo = App\Logo::findOrFail($id);
 
     File::delete('LogoImages/' . $logo->picture);
 
-    $logo->delete();
-    return redirect()->route('logo.index');
+    //$logo->delete();
+    //return redirect()->route('logo.index');
   }
 
 
