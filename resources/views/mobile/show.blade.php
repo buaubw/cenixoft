@@ -24,7 +24,7 @@
                     </div>
                       <div class="row" style="padding-top:10px;">
                   <div class="col-md-2" style="text-align:right;">
-                    <label for="username">User Name</label>
+                    <label for="username">Logo</label>
                     </div>
                   <div class="col-md-8">
                     <img src="../MobileImage/{{$value->customerlogo}}" style="width:200px;height:auto;">
@@ -68,7 +68,7 @@
                               </div>
                               <div class="row" style="padding-top:10px;">
                             <div class="col-md-2" style="text-align:right;">
-                              <label for="address">Address</label>
+                              <label for="address">Date time</label>
                             </div>
                             <div class="col-md-8">
                               {{$value->date}}
@@ -76,7 +76,7 @@
                               </div>
                               <div class="row" style="padding-top:10px;">
                           <div class="col-md-2" style="text-align:right;">
-                            <label for="email">E-Mail</label>
+                            <label for="email">By</label>
                             </div>
                           <div class="col-md-8">
                               {{$value->by}}
