@@ -49,7 +49,6 @@
                 <label for="name" ></label>
               </div>
               <div class="col-md-4">
-
               </div>
               <div class="col-md-2" style="text-align:right;">
                 <label for="username">Confirm Password</label>
