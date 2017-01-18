@@ -46,10 +46,10 @@
             </div>
             <div class="row" style="padding-top:10px;">
               <div class="col-md-2" style="text-align:right;">
-                <label for="name" >Company Name</label>
+                <label for="name" ></label>
               </div>
               <div class="col-md-4">
-                <input class="form-control" type="text" id="company name"  name="company name" value="" placeholder="company Name">
+
               </div>
               <div class="col-md-2" style="text-align:right;">
                 <label for="username">Confirm Password</label>
