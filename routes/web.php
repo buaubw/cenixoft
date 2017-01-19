@@ -21,6 +21,21 @@ Route::get('/logout', function () {
 
 Route::group(['middleware' => 'web'], function() {
 
+  Route::get('contact/create2/{id}', 'ContactController@create2');
+  Route::get('contact/listdata/{id}', 'ContactController@listdata');
+  Route::resource('contact', 'ContactController');
+  Route::get('invoice/create2/{id}', 'InvoiceController@create2');
+  Route::get('invoice/listdata/{id}', 'InvoiceController@listdata');
+  Route::resource('invoice', 'InvoiceController');
+  Route::get('quatation/create2/{id}', 'QuatationController@create2');
+  Route::get('quatation/listdata/{id}', 'QuatationController@listdata');
+  Route::resource('quatation', 'QuatationController');
+  Route::get('customercontact/create2/{id}', 'customercontactController@create2');
+  Route::get('customercontact/listdata/{id}', 'customercontactController@listdata');
+  Route::resource('customercontact', 'customercontactController');
+  Route::get('requirement/create2/{id}', 'RequirementController@create2');
+  Route::get('requirement/listdata/{id}', 'RequirementController@listdata');
+  Route::resource('requirement', 'RequirementController');
   Route::resource('website', 'WebsiteController');
   Route::get('profile/logo', 'ProfileController@logo');
   Route::get('profile/mobile', 'ProfileController@mobile');

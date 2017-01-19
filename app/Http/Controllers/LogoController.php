@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Validator;
 use App;
 use App\Logo;
 use App\Customer;
@@ -35,6 +36,16 @@ class LogoController extends Controller
    */
   public function store(Request $request)
   {
+    $validator = Validator::make($request->all(), [
+    'picture' => 'required|image|max:20480 ',
+    'customerlogo' => 'required|image|max:20480 ',
+    ]);
+
+    if ($validator->fails()) {
+            return redirect('Logo/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
     $now = new DateTime();
 
     if ($request->hasFile('customerlogo')&&$request->hasFile('picture')) {
@@ -105,6 +116,16 @@ class LogoController extends Controller
    */
   public function update(Request $request, $id)
   {
+    $validator = Validator::make($request->all(), [
+    'picture' => 'required|image|max:20480 ',
+    'customerlogo' => 'required|image|max:20480 ',
+    ]);
+
+    if ($validator->fails()) {
+            return redirect('logo/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
     $logo = App\Logo::find($id);
 
     $extension="";
@@ -115,14 +136,17 @@ class LogoController extends Controller
 
 
     if ($request->hasFile('customerlogo')) {
-    Storage::delete($logo->customerlogo);
+      $file2 = base_path('/public/LogoImage/'.$logo->customername);
+      $result2 = File::delete($file2);
     $file = $request->customerlogo;
     $destinationPath = 'LogoImage';
     $extension = $file->getClientOriginalName();
     $upload_success = $file->move($destinationPath, $extension);
     }
     if ($request->hasFile('picture')) {
-    File::delete('LogoImages/' . $logo->picture);
+      $file = base_path('/public/LogoImage/'.$logo->picture);
+      $result = File::delete($file);
+
     $file2 = $request->picture;
     $destinationPath2 = 'LogoImage';
     $extension2 = $file2->getClientOriginalName();
@@ -160,10 +184,14 @@ class LogoController extends Controller
   {
     $logo = App\Logo::findOrFail($id);
 
-    File::delete('LogoImages/' . $logo->picture);
+    $file = base_path('/public/LogoImage/'.$logo->picture);
+    $result = File::delete($file);
 
-    //$logo->delete();
-    //return redirect()->route('logo.index');
+    $file2 = base_path('/public/LogoImage/'.$logo->customerlogo);
+    $result2 = File::delete($file2);
+
+    $logo->delete();
+    return redirect()->route('logo.index');
   }
 
 

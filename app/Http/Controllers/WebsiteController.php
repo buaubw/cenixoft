@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Validator;
 use App;
 use App\Website;
 use App\Customer;
 use DateTime;
-use File;
+
 use Storage;
 class WebsiteController extends Controller
 {
@@ -35,16 +36,31 @@ class WebsiteController extends Controller
   {
     $now = new DateTime();
 
+    $validator = Validator::make($request->all(), [
+    'picture' => 'required|image|max:20480 ',
+    'customerlogo' => 'required|image|max:20480 ',
+    ]);
+
+    if ($validator->fails()) {
+            return redirect('website/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+
     if ($request->hasFile('customerlogo')&&$request->hasFile('picture')) {
         $file = $request->customerlogo;
-        $destinationPath = 'LogoImage';
+        $destinationPath = 'WebsiteImage';
         $extension = $file->getClientOriginalName();
+        //Image::make($file)resize(300, 200);
         $upload_success = $file->move($destinationPath, $extension);
 
 
+
         $file2 = $request->picture;
-        $destinationPath2 = 'LogoImage';
+        $destinationPath2 = 'WebsiteImage';
         $extension2 = $file2->getClientOriginalName();
+      //  Image::make($file2)resize(300, 200);
         $upload_success2 = $file2->move($destinationPath2, $extension2);
 
         $website = new Website;
@@ -103,6 +119,17 @@ class WebsiteController extends Controller
    */
   public function update(Request $request, $id)
   {
+    $validator = Validator::make($request->all(), [
+    'picture' => 'required|image|max:20480 ',
+    'customerlogo' => 'required|image|max:20480 ',
+    ]);
+
+    if ($validator->fails()) {
+            return redirect('website/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
     $website = App\Website::find($id);
 
     $extension="";
@@ -110,19 +137,19 @@ class WebsiteController extends Controller
 
     $upload_success=false;
     $upload_success2=false;
-
-
     if ($request->hasFile('customerlogo')) {
-    Storage::delete($logo->customerlogo);
+      $file2 = base_path('/public/WebsiteImage/'.$website->customername);
+      $result2 = File::delete($file2);
     $file = $request->customerlogo;
-    $destinationPath = 'LogoImage';
+    $destinationPath = 'WebsiteImage';
     $extension = $file->getClientOriginalName();
     $upload_success = $file->move($destinationPath, $extension);
     }
     if ($request->hasFile('picture')) {
-    File::delete('LogoImages/' . $logo->picture);
+      $file = base_path('/public/WebsiteImage/'.$website->picture);
+      $result = File::delete($file);
     $file2 = $request->picture;
-    $destinationPath2 = 'LogoImage';
+    $destinationPath2 = 'WebsiteImage';
     $extension2 = $file2->getClientOriginalName();
     $upload_success2 = $file2->move($destinationPath2, $extension2);
     }
@@ -157,8 +184,11 @@ class WebsiteController extends Controller
   {
     $website = App\Website::find($id);
 
-    File::delete('WebsiteImages/' . $website->picture);
+    $file = base_path('/public/WebsiteImage/'.$website->picture);
+    $result = File::delete($file);
 
+    $file2 = base_path('/public/WebsiteImage/'.$website->customerlogo);
+    $result2 = File::delete($file2);
     $website->delete();
 
     return redirect()->route('website.index');

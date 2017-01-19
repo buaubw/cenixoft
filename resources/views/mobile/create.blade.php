@@ -18,6 +18,15 @@
       <div class="box">
         <div class="box-header">
           <h3 class="box-title">Create Mobile</h3>
+          @if (count($errors) > 0)
+          <div class="alert alert-danger">
+            <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+            </ul>
+          </div>
+        @endif
           <div class="box-body ">
             <div class="form-group">
             <div class="row" style="padding-top:10px;">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Validator;
 use App;
 use App\Mobile;
 use App\Customer;
@@ -35,6 +36,16 @@ class MobileController extends Controller
   {
     $now = new DateTime();
 
+    $validator = Validator::make($request->all(), [
+    'picture' => 'required|image|max:20480 ',
+    'customerlogo' => 'required|image|max:20480 ',
+    ]);
+
+    if ($validator->fails()) {
+            return redirect('mobile/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
     if ($request->hasFile('customerlogo')&&$request->hasFile('picture')) {
         $file = $request->customerlogo;
         $destinationPath = 'MobileImage';
@@ -87,9 +98,6 @@ class MobileController extends Controller
   {
     $mobile = Mobile::find($id);
     return view('mobile.edit')->with('value', $mobile);
-
-
-
   }
 
   /**
@@ -101,6 +109,16 @@ class MobileController extends Controller
    */
   public function update(Request $request, $id)
   {
+    $validator = Validator::make($request->all(), [
+    'picture' => 'required|image|max:20480 ',
+    'customerlogo' => 'required|image|max:20480 ',
+    ]);
+
+    if ($validator->fails()) {
+            return redirect('mobile/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
     $mobile = App\Mobile::find($id);
 
     $extension="";
@@ -111,14 +129,16 @@ class MobileController extends Controller
 
 
     if ($request->hasFile('customerlogo')) {
-    Storage::delete($logo->customerlogo);
+      $file2 = base_path('/public/MobilImage/'.$mobile->customername);
+      $result2 = File::delete($file2);
     $file = $request->customerlogo;
     $destinationPath = 'MobileImage';
     $extension = $file->getClientOriginalName();
     $upload_success = $file->move($destinationPath, $extension);
     }
     if ($request->hasFile('picture')) {
-    File::delete('MobileImage/' . $logo->picture);
+      $file = base_path('/public/MobilImage/'.$mobile->picture);
+      $result = File::delete($file);
     $file2 = $request->picture;
     $destinationPath2 = 'MobileImage';
     $extension2 = $file2->getClientOriginalName();
@@ -156,7 +176,12 @@ class MobileController extends Controller
   {
     $mobile = App\Mobile::find($id);
 
-    File::delete('MobileImage/' . $mobile->picture);
+    $file = base_path('/public/MobilImage/'.$mobile->picture);
+    $result = File::delete($file);
+
+    $file2 = base_path('/public/MobilImage/'.$mobile->customerlogo);
+    $result2 = File::delete($file2);
+    $mobile->delete();
 
     $mobile->delete();
 

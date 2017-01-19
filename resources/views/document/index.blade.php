@@ -49,7 +49,7 @@
               <td>{{$value->date}}</td>
               <td>{{$value->by}}</td>
               <!-- <td><a href= {{url('project/'.  $value->id .'/vieweducation')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td> -->
-              <td><a href= {{url('document/project/'.  $value->id .'')}} class="btn btn-primary" ><i class="fa fa-eye"></i> </a></td>
+              <td><a href= {{url('requirement/listdata/'.  $value->id .'')}} class="btn btn-primary" ><i class="fa fa-eye"></i> </a></td>
 
             </tr>
 
