@@ -51,21 +51,15 @@
               <td>Bua</span></td>
               <td>11-7-2014</td>
               <td style="text-align: center;"><a href="{{url('account/viewcustomer')}}"><i class="fa fa-eye"></i></td>
-              <td><a ><i class="fa fa-remove"></i> </a>
+                <td style="text-align:center;">
+                  <form action="customer/<?php echo $value->id; ?>" method="POST">
+                 {{ csrf_field() }}
+                 {{ method_field('DELETE') }}
+                 <input type="hidden" name="id" value="{{$value->id}}" />
+                 <button type="submit" class="btn btn-danger" style="display: inline-block;" onclick="return confirm('Are you sure?')"><i class="fa fa-remove"></i></button>
+                 </form>
               </td>
-                <script>
-function myFunction() {
-    var x;
-    if (confirm("Press a button!") == true) {
-        x = "You pressed OK!";
-    } else {
-        x = "You pressed Cancel!";
-    }
-    document.getElementById("demo").innerHTML = x;
-}
-</script>
 
-              </td>
             </tr>
 
           </table>

@@ -13,12 +13,12 @@
 </div>
 
     <div class="col-xs-10 col-md-10">
-        <form action="{{ action('RequirementController@store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ action('InvoiceController@store') }}" method="POST" enctype="multipart/form-data">
               {{ csrf_field() }}
               <input type="hidden" value="{{$value}}" name="project_id">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Create Requirement</h3>
+          <h3 class="box-title">Create Invoice</h3>
           @if (count($errors) > 0)
           <div class="alert alert-danger">
             <ul>

@@ -14,7 +14,10 @@ use Storage;
 
 class LogoController extends Controller
 {
-
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
   public function index(){
 
     $logo = Logo::all();
@@ -116,16 +119,17 @@ class LogoController extends Controller
    */
   public function update(Request $request, $id)
   {
-    $validator = Validator::make($request->all(), [
-    'picture' => 'required|image|max:20480 ',
-    'customerlogo' => 'required|image|max:20480 ',
-    ]);
+  $logo = App\Logo::find($id);
+      $validator = Validator::make($request->all(), [
+      'customername' => 'required'
+      ]);
 
-    if ($validator->fails()) {
-            return redirect('logo/create')
-                        ->withErrors($validator)
-                        ->withInput();
-        }
+      if ($validator->fails()) {
+        return redirect('logo.edit',['value' => $logo])
+            ->withInput()
+            ->withErrors($validator);
+  }
+
     $logo = App\Logo::find($id);
 
     $extension="";

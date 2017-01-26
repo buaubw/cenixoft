@@ -14,6 +14,10 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
     public function index()
     {
       $customers = Customer::all();
@@ -128,6 +132,6 @@ class CustomerController extends Controller
     {
       $customer = Customer::find($id);
       $customer->delete();
-      return redirect()->route('customer.index');
+      return redirect('customer');
     }
 }

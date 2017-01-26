@@ -6,20 +6,19 @@ function demoFromHTML() {
 
   var mywindow = window.open('', 'PRINT', 'height=400,width=600');
 
-
+          $('#download').hide();
+          $('#ok').hide();
           mywindow.document.write('<html><head><title>' + document.title  + '</title>');
-
           mywindow.document.write('</head><body >');
-        mywindow.document.write('<h1>' + document.title  + '</h1>');
+          mywindow.document.write('<h1 style="text-align:center;">' + document.title  + '</h1>');
           mywindow.document.write(document.getElementById("customers").innerHTML);
           mywindow.document.write('</body></html>');
-
           mywindow.document.close(); // necessary for IE >= 10
           mywindow.focus(); // necessary for IE >= 10*/
-
           mywindow.print();
           mywindow.close();
-
+          $('#download').show();
+          $('#ok').show();
           return true;
 }
 </script>
@@ -32,11 +31,11 @@ function demoFromHTML() {
 
   <div class="row col-md-11" style="padding-top:10px;padding-left:20px;">
 
-    <p>Project: Logo Design</p>
-    <p>First name: Ubilwan</p>
-    <p>Last name: Rattanaubol</p>
-    <p>Company name: Ichitan</p>
-    <button href="#" class="btn btn-warning pull-right" style="padding-top:10px;padding-bottom:10px;" onclick="demoFromHTML()">Download</button>
+    <h4><b>Project:</b> Logo Design</h4  >
+    <h4><b>First name:</b> Ubilwan</h4>
+    <h4><b>Last name:</b> Rattanaubol</h4>
+    <h4><b>Company name:</b> Ichitan</h4>
+    <button href="#" id="download"  class="btn btn-warning pull-right" style="padding-top:10px;padding-bottom:10px;" onclick="demoFromHTML()">Download</button>
     <br>
     <table class="table table-striped" style="padding-top:10px;">
       <tr>
@@ -68,9 +67,9 @@ function demoFromHTML() {
     </table>
 
     <p>ข้อเสนอแนะ</p>
-    <textarea class="form-control" row="5"></textarea>
+    <textarea class="form-control" row="5" style="min-width:600px;min-height:300px;"></textarea>
     <br>
-    <a href="#" class="btn btn-primary pull-right" style="padding-top:10px;">OK</a>
+    <a href="#" id="ok" class="btn btn-primary pull-right" style="padding-top:10px;">OK</a>
 </div>
 </div>
 </div>

@@ -39,9 +39,9 @@
                     <th>Title</th>
                     <th>Date time</th>
                     <th>By</th>
-                    <th style="text-align: center;">View</th>
-                    <th style="text-align: center;">Edit</th>
-                    <th style="text-align: center;">Remove</th>
+                    <th style="text-align: center;width:60px;">View</th>
+                    <!-- <th style="text-align: center;">Edit</th> -->
+                    <th style="text-align: center;width:60px;">Remove</th>
                   </tr>
 
                   <?php $count =1 ?>
@@ -51,8 +51,9 @@
                   <td>{{$value->title}}</td>
                   <td>{{$value->date}}</td>
                     <td>{{$value->by}}</td>
-                    <td style="text-align:center;"><a href= {{url('quatation/'.  $value->id .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
-                    <td style="text-align:center;"><a href= {{url('quatation/'.  $value->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td>
+                    <td style="text-align:center;"><a href= {{url('documents/quatation/'.  $value->filename .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
+                    <!-- <td style="text-align:center;"><a href= {{url('quatation/'.  $value->id .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td> -->
+                    <!-- <td style="text-align:center;"><a href= {{url('quatation/'.  $value->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td> -->
                     <td style="text-align:center;">
                       <form action="../../quatation/<?php echo $value->id; ?>" method="POST">
                      {{ csrf_field() }}

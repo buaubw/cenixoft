@@ -31,43 +31,105 @@
                   </div>
                 </div>
             </div>
+
+<style>
+ul.nav.nav-tabs>li.active>a{
+  background-color: #ffb800;
+
+}
+</style>
+<ul class="nav nav-tabs">
+  <li class="active" ><a data-toggle="tab" href="#Cenixoft">Cenixoft</a></li>
+  <li><a data-toggle="tab" href="#Customer">Customer</a></li>
+
+</ul>
+
+<div class="tab-content">
+  <div id="Cenixoft" class="tab-pane fade in active">
+    <div class="box-body table-responsive no-padding">
+      <table class="table table-hover">
+        <tr>
+          <th>No.</th>
+          <th>Title</th>
+          <th>Date time</th>
+          <th>By</th>
+          <th style="text-align: center;width:60px;">View</th>
+          <!-- <th style="text-align: center;">Edit</th> -->
+          <th style="text-align: center;width:60px;">Remove</th>
+        </tr>
+
+        <?php $count =1 ?>
+        @foreach($values as $value)
+      <tr>
+          <td>{{$count}}</td>
+        <td>{{$value->title}}</td>
+        <td>{{$value->date}}</td>
+          <td>{{$value->by}}</td>
+          <td style="text-align:center;"><a href= {{url('documents/contact/'.  $value->filename .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
+          <!-- <td style="text-align:center;"><a href= {{url('contact/'.  $value->id .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td> -->
+          <!-- <td style="text-align:center;"><a href= {{url('contact/'.  $value->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td> -->
+          <td style="text-align:center;">
+            <form action="../../contact/<?php echo $value->id; ?>" method="POST">
+           {{ csrf_field() }}
+           {{ method_field('DELETE') }}
+           <input type="hidden" name="id" value="{{$value->id}}" />
+           <button type="submit" class="btn btn-danger" style="display: inline-block;" onclick="return confirm('Are you sure?')"><i class="fa fa-remove"></i></button>
+           </form>
+        </td>
+      </tr>
+
+<?php $count++ ?>
+@endforeach
+      </table>
+    </div>
+  </div>
+  <div id="Customer" class="tab-pane fade">
+    <div class="box-body table-responsive no-padding">
+      <table class="table table-hover">
+        <tr>
+          <th>No.</th>
+          <th>Title</th>
+          <th>Date time</th>
+          <th>By</th>
+          <th style="text-align: center;">View</th>
+          <!-- <th style="text-align: center;">Edit</th>
+          <th style="text-align: center;">Remove</th> -->
+        </tr>
+
+        <?php $count =1 ?>
+        @foreach($valuescustomer as $value2)
+      <tr>
+          <td>{{$count}}</td>
+        <td>{{$value2->title}}</td>
+        <td>{{$value2->date}}</td>
+          <td>{{$value2->by}}</td>
+          <td style="text-align:center;"><a href= {{url('documents/customercontact/'.  $value2->filename .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
+          <!-- <td style="text-align:center;"><a href= {{url('customercontact/'.  $value2->id .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td> -->
+          <!-- <td style="text-align:center;"><a href= {{url('customercontact/'.  $value2->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td>
+          <td style="text-align:center;">
+            <form action="../../customercontact/<--?php echo $value->id; ?>" method="POST">
+           {{ csrf_field() }}
+           {{ method_field('DELETE') }}
+           <input type="hidden" name="id" value="{{$value2->id}}" />
+           <button type="submit" class="btn btn-danger" style="display: inline-block;" onclick="return confirm('Are you sure?')"><i class="fa fa-remove"></i></button>
+           </form>
+        </td> -->
+      </tr>
+
+<?php $count++ ?>
+@endforeach
+      </table>
+    </div>
+  </div>
+
+</div>
         <!-- /.box-header -->
-              <div class="box-body table-responsive no-padding">
-                <table class="table table-hover">
-                  <tr>
-                    <th>No.</th>
-                    <th>Title</th>
-                    <th>Date time</th>
-                    <th>By</th>
-                    <th style="text-align: center;">View</th>
-                    <th style="text-align: center;">Edit</th>
-                    <th style="text-align: center;">Remove</th>
-                  </tr>
 
-                  <?php $count =1 ?>
-                  @foreach($values as $value)
-                <tr>
-                    <td>{{$count}}</td>
-                  <td>{{$value->title}}</td>
-                  <td>{{$value->date}}</td>
-                    <td>{{$value->by}}</td>
-                    <td style="text-align:center;"><a href= {{url('contact/'.  $value->id .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
-                    <td style="text-align:center;"><a href= {{url('contact/'.  $value->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td>
-                    <td style="text-align:center;">
-                      <form action="../../contact/<?php echo $value->id; ?>" method="POST">
-                     {{ csrf_field() }}
-                     {{ method_field('DELETE') }}
-                     <input type="hidden" name="id" value="{{$value->id}}" />
-                     <button type="submit" class="btn btn-danger" style="display: inline-block;" onclick="return confirm('Are you sure?')"><i class="fa fa-remove"></i></button>
-                     </form>
-                  </td>
-                </tr>
-
-    <?php $count++ ?>
-    @endforeach
-                </table>
-              </div>
         <!-- /.box-body -->
+
+
+
+
         </div>
       </div>
     </div>

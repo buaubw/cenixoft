@@ -36,23 +36,26 @@
                 <table class="table table-hover">
                   <tr>
                     <th>No.</th>
+                    <th></th>
                     <th>Title</th>
                     <th>Date time</th>
                     <th>By</th>
-                    <th style="text-align: center;">View</th>
-                    <th style="text-align: center;">Edit</th>
-                    <th style="text-align: center;">Remove</th>
+                    <th style="text-align: center;width:60px;">View</th>
+                    <!-- <th style="text-align: center;">Edit</th> -->
+                    <th style="text-align: center;width:60px;">Remove</th>
                   </tr>
 
                   <?php $count =1 ?>
                   @foreach($values as $value)
                 <tr>
                     <td>{{$count}}</td>
+                  <td></td>
                   <td>{{$value->title}}</td>
                   <td>{{$value->date}}</td>
                     <td>{{$value->by}}</td>
-                    <td style="text-align:center;"><a href= {{url('requirement/'.  $value->id .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
-                    <td style="text-align:center;"><a href= {{url('requirement/'.  $value->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td>
+                    <td style="text-align:center;"><a href= {{url('documents/requirement/'.  $value->filename .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
+                    <!-- <td style="text-align:center;"><a href= {{url('requirement/'.  $value->id .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td> -->
+                    <!-- <td style="text-align:center;"><a href= {{url('requirement/'.  $value->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td> -->
                     <td style="text-align:center;">
                       <form action="../../requirement/<?php echo $value->id; ?>" method="POST">
                      {{ csrf_field() }}

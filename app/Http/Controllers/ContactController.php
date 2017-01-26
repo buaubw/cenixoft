@@ -11,6 +11,7 @@ use App\Contact;
 use App\project;
 use DateTime;
 use File;
+use Response;
 
 class ContactController extends Controller
 {
@@ -19,6 +20,10 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
      public function index()
      {
        $documents = Contact::all();
@@ -29,16 +34,20 @@ class ContactController extends Controller
      public function listdata($id)
      {
          $project = Project::find($id);
-       $documents = DB::table('contacts')
+         $documents = DB::table('contacts')
                       ->where('project_id', '=', $id)
                       ->get();
+
+        $documentscustomer = DB::table('customercontacts')
+                                   ->where('project_id', '=', $id)
+                                   ->get();
 
          if($documents->count()<0){
             return view('document.index');
          }
 
       //  return view('contact.list')->with('values', $documents)->with('project_id', $id);
-        return  \View::make('contact.list')->with('values', $documents)->with('project_id', $id)->with('project',$project);
+        return  \View::make('contact.list')->with('values', $documents)->with('valuescustomer', $documentscustomer)->with('project_id', $id)->with('project',$project);
      }
 
 
@@ -81,7 +90,7 @@ class ContactController extends Controller
            $document->date = $now;
            $document->by = "test";
            $document->save();
-           return redirect()->action('contact@listdata', ['id' => $request->project_id]);
+           return redirect()->action('ContactController@listdata', ['id' => $request->project_id]);
          // return redirect()->route('requirement.listdata', ['id' => 1]);
          }
          return redirect()->route('contact.create');
@@ -91,7 +100,12 @@ class ContactController extends Controller
      public function show($id)
      {
        $document = Contact::find($id);
-         return view('contact.show')->with('value', $document);
+      //  $file= public_path(). "/documents/contact/".$document->filename;
+      //  $headers = array(
+      //         'Content-Type: application/pdf',
+      //       );
+      //    return Response::download($file, $document->filename, $headers);
+        return view('contact.show')->with('value', $document);
      }
 
      /**

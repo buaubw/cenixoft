@@ -14,7 +14,7 @@
         <a  href="{{url('invoice/listdata')}}/{{$project_id}}" class="btn btn-success " style=" margin-left: 20px">Invoice</a>
       </center>
 
-        <a href="{{url('contact/create2')}}/{{$project_id}}"  class="btn btn-warning " style=" margin-top: 20px">Create</a>
+        <a href="{{url('invoice/create2')}}/{{$project_id}}"  class="btn btn-warning " style=" margin-top: 20px">Create</a>
     </div>
 
       <div class="row" style="padding-top:20px;">
@@ -39,20 +39,22 @@
                     <th>Title</th>
                     <th>Date time</th>
                     <th>By</th>
-                    <th style="text-align: center;">View</th>
-                    <th style="text-align: center;">Edit</th>
-                    <th style="text-align: center;">Remove</th>
+                    <th style="text-align: center;width:60px;">View</th>
+                    <!-- <th style="text-align: center;">Edit</th> -->
+                    <th style="text-align: center;width:60px;">Remove</th>
                   </tr>
 
                   <?php $count =1 ?>
                   @foreach($values as $value)
                 <tr>
                     <td>{{$count}}</td>
+
                   <td>{{$value->title}}</td>
                   <td>{{$value->date}}</td>
                     <td>{{$value->by}}</td>
-                    <td style="text-align:center;"><a href= {{url('contact/'.  $value->id .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
-                    <td style="text-align:center;"><a href= {{url('contact/'.  $value->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td>
+                    <td style="text-align:center;"><a href= {{url('documents/invoice/'.  $value->filename .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
+                    <!-- <td style="text-align:center;"><a href= {{url('contact/'.  $value->id .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td> -->
+                    <!-- <td style="text-align:center;"><a href= {{url('contact/'.  $value->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td> -->
                     <td style="text-align:center;">
                       <form action="../../contact/<?php echo $value->id; ?>" method="POST">
                      {{ csrf_field() }}

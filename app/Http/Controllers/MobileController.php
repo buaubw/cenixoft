@@ -13,6 +13,10 @@ use File;
 use Storage;
 class MobileController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
   public function index(){
 
     $mobile = Mobile::all();
@@ -109,17 +113,17 @@ class MobileController extends Controller
    */
   public function update(Request $request, $id)
   {
+  $mobile = App\Mobile::find($id);
     $validator = Validator::make($request->all(), [
-    'picture' => 'required|image|max:20480 ',
-    'customerlogo' => 'required|image|max:20480 ',
+    'customername' => 'required'
     ]);
 
     if ($validator->fails()) {
-            return redirect('mobile/create')
-                        ->withErrors($validator)
-                        ->withInput();
-        }
-    $mobile = App\Mobile::find($id);
+      return redirect('mobile.edit',['value' => $mobile])
+          ->withInput()
+          ->withErrors($validator);
+}
+
 
     $extension="";
     $extension2="";

@@ -19,6 +19,10 @@ class InvoiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
      public function index()
      {
        $documents = Invoice::all();
@@ -59,7 +63,7 @@ class InvoiceController extends Controller
        $now = new DateTime();
 
        $validator = Validator::make($request->all(), [
-       'filename' => 'required|max:204800',
+       'filename' => 'required',
        'title' =>'required'
        ]);
 

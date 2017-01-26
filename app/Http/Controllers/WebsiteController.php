@@ -9,10 +9,15 @@ use App;
 use App\Website;
 use App\Customer;
 use DateTime;
+use File;
 
 use Storage;
 class WebsiteController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
   public function index(){
 
     $website = Website::all();
@@ -108,7 +113,7 @@ class WebsiteController extends Controller
      return view('website.edit')
          ->with('value', $website);
 
-  }
+       }
 
   /**
    * Update the specified resource in storage.
@@ -119,19 +124,16 @@ class WebsiteController extends Controller
    */
   public function update(Request $request, $id)
   {
+    $website = App\Website::find($id);
     $validator = Validator::make($request->all(), [
-    'picture' => 'required|image|max:20480 ',
-    'customerlogo' => 'required|image|max:20480 ',
+    'customername' => 'required'
     ]);
 
     if ($validator->fails()) {
-            return redirect('website/create')
-                        ->withErrors($validator)
-                        ->withInput();
-        }
-
-    $website = App\Website::find($id);
-
+      return redirect('website.edit',['value' => $website])
+          ->withInput()
+          ->withErrors($validator);
+}
     $extension="";
     $extension2="";
 

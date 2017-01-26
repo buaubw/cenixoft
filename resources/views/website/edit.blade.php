@@ -13,7 +13,7 @@
 </div>
 
     <div class="col-xs-10 col-md-10">
-        <form method="POST" action = "{{url('/')}}/logo/<?php echo $value->id; ?>" enctype="multipart/form-data">
+        <form method="POST" action = "{{url('/')}}/website/<?php echo $value->id; ?>" enctype="multipart/form-data">
             {{ csrf_field() }}
           {{ method_field('PUT') }}
         <input type="hidden" name="id" value="{{$value->id}}" />
@@ -35,10 +35,10 @@
             <div class="form-group">
             <div class="row" style="padding-top:10px;">
               <div class="col-md-2" style="text-align:right;">
-                <label for="firstname" >Name</label>
+                <label for="firstname" >customername</label>
               </div>
               <div class="col-md-6">
-                <input class="form-control" type="text" id="name"  name="rname" value="{{$value->name}}" placeholder="Name">
+                <input class="form-control" type="text" id="customername"  name="customername" value="{{$value->customername}}" placeholder="Name">
               </div>
 
             </div>

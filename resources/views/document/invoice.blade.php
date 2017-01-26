@@ -34,7 +34,6 @@
                     <th>Date time</th>
                     <th>By</th>
                     <th style="text-align: center;">View</th>
-                    <th style="text-align: center;">Edit</th>
                     <th style="text-align: center;">Remove</th>
                   </tr>
                     <tr>
@@ -43,7 +42,6 @@
                       <td>11-7-2014</td>
                       <td>Suwanan</td>
                       <td style="text-align: center;"><a><i class="fa fa-eye" ></i> </a></td>
-                      <td style="text-align: center;"><a  href="{{url('document/editinvoice')}}"><i class="fa fa-edit"></i> </a></td>
                       <td style="text-align: center;"><a><i class="fa fa-times"></i> </a></td>
                     </tr>
                 </table>

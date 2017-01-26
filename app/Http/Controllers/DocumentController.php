@@ -15,6 +15,10 @@ class DocumentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
     public function index()
     {
 
@@ -72,26 +76,6 @@ class DocumentController extends Controller
     public function inboxcontact()
     {
         return view('document.inboxcontact');
-        //
-    }
-    public function editrequirement()
-    {
-        return view('document.editrequirement');
-        //
-    }
-    public function editcontact()
-    {
-        return view('document.editcontact');
-        //
-    }
-    public function editinvoice()
-    {
-        return view('document.editinvoice');
-        //
-    }
-    public function editquotation()
-    {
-        return view('document.editquotation');
         //
     }
     public function project($id)

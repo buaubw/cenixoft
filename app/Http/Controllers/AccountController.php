@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\ServiceProvider;
+use App\User;
+use App;
+use App\Http\Controllers\Controller;
+use Validator;
 class AccountController extends Controller
 {
     /**
@@ -11,9 +16,16 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
     public function index()
     {
-        return view('account.index');
+      $customers = Customer::all();
+
+      return view('account.customer')->with('values', $customers);
+      //  return view('account.index');
     }
     public function customer()
     {
@@ -21,7 +33,9 @@ class AccountController extends Controller
     }
     public function admin()
     {
-        return view('account.admin');
+      $users = User::all();
+      return view('account.admin')->with('values', $users);
+      //  return view('account.admin');
     }
     public function createcustomer()
     {
@@ -57,7 +71,7 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-    
+
     }
 
     /**
@@ -102,6 +116,12 @@ class AccountController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $user = App\User::find($id);
+      if(Auth::id()==$id){
+        $user->delete();
+        return redirect('/login');
+      }
+      $user->delete();
+        return redirect('account/admin');
     }
 }

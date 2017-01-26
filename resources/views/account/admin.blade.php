@@ -34,31 +34,32 @@
             <tr>
               <th>No</th>
               <th>Username</th>
-              <th>Password</th>
-              <th>First Name</th>
-              <th>Last Name</th>
+              <th>Full Name</th>
               <th>Date Time</th>
-              <th>By</th>
-              <th>View</th>
+              <!-- <th>By</th> -->
               <th>Remove</th>
             </tr>
+            <?php $count =1 ?>
+            @foreach($values as $value)
             <tr>
-              <td>001</td>
-              <td>Logo Design</td>
-              <td>11-7-2014</td>
-              <td>11-7-2014</td>
-              <td>Bua</span></td>
-              <td>Bua</span></td>
-              <td>11-7-2014</td>
-              <td style="text-align: center;"><a href="{{url('account/viewadmin')}}" ><i class="fa fa-eye" ></i> </a></td>
-              <td><a ><i class="fa fa-remove"></i> </a>
-              </td>
-                <script>
+              <td>{{$count}}</td>
+              <td>{{$value->username}}</td>
+              <td>{{$value->name}}</td>
+              <td>{{$value->created_at}}</td>
+              <td style="text-align:center;">
+                <form action="../account/<?php echo $value->id; ?>" method="POST">
+               {{ csrf_field() }}
+               {{ method_field('DELETE') }}
+               <input type="hidden" name="id" value="{{$value->id}}" />
+               <button type="submit" class="btn btn-danger" style="display: inline-block;" onclick="return confirm('Are you sure?')"><i class="fa fa-remove"></i></button>
+               </form>
+            </td>
 
-              </td>
             </tr>
-
+            <?php $count++ ?>
+            @endforeach
           </table>
+
         </div>
         <!-- /.box-body -->
       </div>

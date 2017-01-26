@@ -27,7 +27,7 @@
                     <label for="username">Logo</label>
                     </div>
                   <div class="col-md-8">
-                      <img src="../LogoImage/{{$value->customerlogo}}" style="width:200px;auto;">
+                      <img src="../WebsiteImage/{{$value->customerlogo}}" style="width:200px;auto;">
                   </div>
                     </div>
 
@@ -62,7 +62,7 @@
                               <label for="picture" >Picture</label>
                             </div>
                             <div class="col-md-8">
-                                <img src="../LogoImage/{{$value->picture}}" style="width:200px;auto;">
+                                <img src="../WebsiteImage/{{$value->picture}}" style="width:200px;auto;">
                             </div>
                               </div>
                               <div class="row" style="padding-top:10px;">

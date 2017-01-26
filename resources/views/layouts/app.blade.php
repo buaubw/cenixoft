@@ -119,7 +119,7 @@
           </li>
           <!-- Tasks: style can be found in dropdown.less -->
           <li class="dropdown tasks-menu">
-            <a href="{url{'/logout'}}" >
+            <a href="{{url('/logout')}}" >
               <i class="fa fa-power-off"></i>
             </a>
 
