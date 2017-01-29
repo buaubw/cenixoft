@@ -110,7 +110,7 @@ class DocumentController extends Controller
       //
       //
       // $customer->save();
-      return
+    
     }
 
     /**
