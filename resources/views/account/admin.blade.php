@@ -35,6 +35,7 @@
               <th>No</th>
               <th>Username</th>
               <th>Full Name</th>
+              <th>Email</th>
               <th>Date Time</th>
               <!-- <th>By</th> -->
               <th>Remove</th>
@@ -45,6 +46,7 @@
               <td>{{$count}}</td>
               <td>{{$value->username}}</td>
               <td>{{$value->name}}</td>
+              <td>{{$value->email}}</td>
               <td>{{$value->created_at}}</td>
               <td style="text-align:center;">
                 <form action="../account/<?php echo $value->id; ?>" method="POST">
