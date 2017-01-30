@@ -8,7 +8,7 @@ use App;
 use App\Project;
 use App\Customer;
 use DateTime;
-
+use Auth;
 class ProjectController extends Controller
 {
   public function __construct()
@@ -44,7 +44,7 @@ class ProjectController extends Controller
     $project->name = $request->name;
     $project->customer_id = $request->customer_id;
     $project->date = $now;
-    $project->by = "test";
+    $project->by = Auth::user()->name;
     $project->type = $request->type;
     $project->save();
     return redirect()->route('project.index');

@@ -8,6 +8,7 @@ use App\Document;
 use App\Project;
 use App\Customer;
 use DateTime;
+use Auth;
 class DocumentController extends Controller
 {
     /**
@@ -110,7 +111,7 @@ class DocumentController extends Controller
       //
       //
       // $customer->save();
-    
+
     }
 
     /**

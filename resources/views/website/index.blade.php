@@ -2,17 +2,14 @@
 
 @section('content')
 
-<div class="content-wrapper" style="height:1000px;">
-
-
-
+<div class="content-wrapper" style="min-height:700px;">
 <div class="container" style="padding-top:50px;">
   <div class="col-md-2">
 <a href="{{url('website/create')}}"  class="btn btn-block btn-warning">Create</a>
 </div>
 
   <div class="row" style="padding-top:50px;">
-    <div class="col-xs-11 col-md-11">
+    <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">
           <h3 class="box-title">Website</h3>
@@ -57,9 +54,6 @@
                  <input type="hidden" name="id" value="{{$value->id}}" />
                  <button type="submit" class="btn btn-danger" style="display: inline-block;" onclick="return confirm('Are you sure?')"><i class="fa fa-remove"></i></button>
                  </form>
-
-
-
               </td>
             </tr>
 

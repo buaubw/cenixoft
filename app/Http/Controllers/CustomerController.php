@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App;
 use App\Customer;
 use DateTime;
-
+use Auth;
 class CustomerController extends Controller
 {
     /**
@@ -65,7 +65,7 @@ class CustomerController extends Controller
         $customer->password = $request->password;
         // $customer->taxno = $request->taxno;
         $customer->date =$now;
-        $customer->by ="by";
+        $customer->by = Auth::user()->name;
 
         $customer->save();
         return redirect()->route('customer.index');
@@ -132,6 +132,6 @@ class CustomerController extends Controller
     {
       $customer = Customer::find($id);
       $customer->delete();
-      return redirect('customer');
+      return redirect()->route('customer.index');
     }
 }

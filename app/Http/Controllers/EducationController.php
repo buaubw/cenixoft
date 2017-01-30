@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App;
 use App\Education;
 use DateTime;
-
+use Auth;
 class EducationController extends Controller
 {
     /**
@@ -70,7 +70,7 @@ class EducationController extends Controller
       $education->type = $request->type;
       $education->date = $now;
       $education->description = $request->description;
-      $education->by ="test";
+      $education->by = Auth::user()->name;
 
       $education->save();
       return redirect()->route('education.index');

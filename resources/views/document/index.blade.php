@@ -7,11 +7,9 @@
 
 <div class="container" style="padding-top:20px;">
     <h3 class="box-title">Document Store</h3>
-  <div class="col-md-2">
 
-</div>
 
-    <div class="col-xs-10 col-md-11">
+    <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">
 

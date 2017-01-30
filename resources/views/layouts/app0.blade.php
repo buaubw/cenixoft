@@ -74,7 +74,7 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-        
+
         <!-- Tasks: style can be found in dropdown.less -->
         <li class="dropdown tasks-menu">
           <a href="{{url('/logout')}}" >
@@ -102,7 +102,7 @@
 
         </li>
         <li class="treeview">
-        <a href="{{ url('=project') }}">
+        <a href="{{ url('project') }}">
             <i class="fa fa-paste"></i> <span>Project</span>
 
           </a>

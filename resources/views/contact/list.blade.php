@@ -1,11 +1,9 @@
 @extends('layouts.app00')
 
 @section('content')
-
-<div class="content-wrapper" style="height:7  00px;">
-  <div class="container" style="padding-top:20px;">
-
-    <div class="col-md-8">
+<div class="content-wrapper" style="min-height:700px;">
+<div class="container" style="padding-top:20px;">
+    <div class="col-xs-10 col-md-10">
       <center>
         <a  href="{{url('document')}}" class="btn btn-primary" style=" margin-left: 20px">All Project</a>
         <a  href="{{url('requirement/listdata')}}/{{$project_id}}" class="btn btn-primary " style=" margin-left: 20px">Requirement</a>
@@ -18,7 +16,7 @@
     </div>
 
       <div class="row" style="padding-top:20px;">
-        <div class="col-xs-11 col-md-11">
+        <div class="col-xs-10 col-md-10">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title"><strong>Contact:</strong> {{$project->name}} Project</h3>
@@ -104,16 +102,6 @@ ul.nav.nav-tabs>li.active>a{
         <td>{{$value2->date}}</td>
           <td>{{$value2->by}}</td>
           <td style="text-align:center;"><a href= {{url('documents/customercontact/'.  $value2->filename .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
-          <!-- <td style="text-align:center;"><a href= {{url('customercontact/'.  $value2->id .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td> -->
-          <!-- <td style="text-align:center;"><a href= {{url('customercontact/'.  $value2->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td>
-          <td style="text-align:center;">
-            <form action="../../customercontact/<--?php echo $value->id; ?>" method="POST">
-           {{ csrf_field() }}
-           {{ method_field('DELETE') }}
-           <input type="hidden" name="id" value="{{$value2->id}}" />
-           <button type="submit" class="btn btn-danger" style="display: inline-block;" onclick="return confirm('Are you sure?')"><i class="fa fa-remove"></i></button>
-           </form>
-        </td> -->
       </tr>
 
 <?php $count++ ?>
@@ -123,22 +111,9 @@ ul.nav.nav-tabs>li.active>a{
   </div>
 
 </div>
-        <!-- /.box-header -->
-
-        <!-- /.box-body -->
-
-
-
-
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
 @endsection

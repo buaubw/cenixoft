@@ -11,7 +11,7 @@ use App\Quatation;
 use App\project;
 use DateTime;
 use File;
-
+use Auth;
 class QuatationController extends Controller
 {
     /**
@@ -83,7 +83,7 @@ class QuatationController extends Controller
            $document->filename = $extension;
            $document->project_id = $request->project_id;
            $document->date = $now;
-           $document->by = "test";
+           $document->by = Auth::user()->name;
            $document->save();
            return redirect()->action('QuatationController@listdata', ['id' => $request->project_id]);
          // return redirect()->route('requirement.listdata', ['id' => 1]);

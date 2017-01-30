@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="content-wrapper" style="height:7  00px;">
+<div class="content-wrapper" style="height:700px;">
   <div class="container" style="padding-top:20px;">
 
     <div class="col-md-8">
@@ -18,7 +18,7 @@
     </div>
 
       <div class="row" style="padding-top:20px;">
-        <div class="col-xs-11 col-md-11">
+        <div class="col-xs-10 col-md-10">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title"><strong>Quotation:</strong> {{$project->name}} Project</h3>

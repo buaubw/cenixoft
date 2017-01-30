@@ -12,7 +12,7 @@
 </div>
 
   <div class="row" style="padding-top:50px;">
-    <div class="col-xs-11 col-md-11">
+    <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">
           <h3 class="box-title">Mobile</h3>

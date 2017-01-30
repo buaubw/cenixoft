@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="content-wrapper" style="height:7  00px;">
+<div class="content-wrapper" style="min-height:1000px;">
   <div class="container" style="padding-top:20px;">
 
     <div class="col-md-8">
@@ -18,7 +18,7 @@
     </div>
 
       <div class="row" style="padding-top:20px;">
-        <div class="col-xs-11 col-md-11">
+        <div class="col-xs-10 col-md-10">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title"><strong>Invoice:</strong> {{$project->name}} Project</h3>
@@ -56,7 +56,7 @@
                     <!-- <td style="text-align:center;"><a href= {{url('contact/'.  $value->id .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td> -->
                     <!-- <td style="text-align:center;"><a href= {{url('contact/'.  $value->id .'/edit')}} class="btn btn-warning" ><i class="fa fa-edit"></i> </a></td> -->
                     <td style="text-align:center;">
-                      <form action="../../contact/<?php echo $value->id; ?>" method="POST">
+                      <form action="../../invoice/<?php echo $value->id; ?>" method="POST">
                      {{ csrf_field() }}
                      {{ method_field('DELETE') }}
                      <input type="hidden" name="id" value="{{$value->id}}" />

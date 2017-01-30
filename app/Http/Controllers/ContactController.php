@@ -12,7 +12,7 @@ use App\project;
 use DateTime;
 use File;
 use Response;
-
+use Auth;
 class ContactController extends Controller
 {
     /**
@@ -88,7 +88,7 @@ class ContactController extends Controller
            $document->filename = $extension;
            $document->project_id = $request->project_id;
            $document->date = $now;
-           $document->by = "test";
+           $document->by = Auth::user()->name;
            $document->save();
            return redirect()->action('ContactController@listdata', ['id' => $request->project_id]);
          // return redirect()->route('requirement.listdata', ['id' => 1]);

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="content-wrapper" style="height:1000px;">
+<div class="content-wrapper" style="min-height:1000px;">
 
 <div class="container" style="padding-top:50px;">
 

@@ -13,7 +13,7 @@
 </div>
 
   <div class="row" style="padding-top:50px;">
-    <div class="col-xs-10 col-md-11">
+    <div class="col-xs-10 col-md-10">
       <div class="box">
         <div class="box-header">
 
@@ -31,7 +31,7 @@
               <th>View</th>
               <!-- <th>View</th> -->
               <!-- <th>Edit</th> -->
-              <th>Remove</th>
+              <th style="text-align:center;">Remove</th>
             </tr>
               <?php $count =1 ?>
             @foreach($values as $value)

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 class ProfileController extends Controller
 {
     /**
@@ -73,7 +73,7 @@ class ProfileController extends Controller
       $profile->name = $request->name;
       $profile->customer_id = $request->customer_id;
       $profile->date = $request->date;
-      $profile->by = $request->by;
+      $profile->by = Auth::user()->name;
 
 
 

@@ -74,7 +74,7 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-      
+
         <!-- Tasks: style can be found in dropdown.less -->
         <li class="dropdown tasks-menu">
           <a href="{{url('/logout')}}" >

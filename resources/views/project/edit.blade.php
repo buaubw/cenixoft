@@ -62,7 +62,7 @@
 
                   </div>
                   <div  style="text-align:center;padding-top:20px;" >
-                    <a href= {{url('education')}} class="btn btn-danger">Cancel</a>
+                    <a href= {{url('project')}} class="btn btn-danger">Cancel</a>
                     <button type="submit" class="btn btn-primary">Save</button>
                   </div>
 

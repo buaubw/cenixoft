@@ -29,7 +29,7 @@ function demoFromHTML() {
 <div class="container" style="padding-top:20px;" id="customers">
 <h3 class="box-title">Feedback</h3>
 
-  <div class="row col-md-11" style="padding-top:10px;padding-left:20px;">
+  <div class="row col-md-10" style="padding-top:10px;padding-left:20px;">
 
     <h4><b>Project:</b> Logo Design</h4  >
     <h4><b>First name:</b> Ubilwan</h4>

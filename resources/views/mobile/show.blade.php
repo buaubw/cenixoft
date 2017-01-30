@@ -62,8 +62,7 @@
                               <label for="picture" >Picture</label>
                             </div>
                             <div class="col-md-8">
-                              <img src="../MobileImage/{{$value->picture}}" style="width:200px;auto;">
-
+                              <img src="../MobileImage/{{$value->picture}}" style="width:200px;height:auto;">
                             </div>
                               </div>
                               <div class="row" style="padding-top:10px;">

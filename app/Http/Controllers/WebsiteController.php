@@ -10,7 +10,7 @@ use App\Website;
 use App\Customer;
 use DateTime;
 use File;
-
+use Auth;
 use Storage;
 class WebsiteController extends Controller
 {
@@ -77,7 +77,7 @@ class WebsiteController extends Controller
 
         $website->picture =$extension2;
         $website->date = $now;
-        $website->by = "test";
+        $website->by = Auth::user()->name;
 
         $website->save();
         return redirect()->route('website.index');

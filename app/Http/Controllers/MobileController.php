@@ -10,7 +10,9 @@ use App\Mobile;
 use App\Customer;
 use DateTime;
 use File;
+use Auth;
 use Storage;
+
 class MobileController extends Controller
 {
   public function __construct()
@@ -71,7 +73,8 @@ class MobileController extends Controller
 
         $mobile->picture =$extension2;
         $mobile->date = $now;
-        $mobile->by = "test";
+
+        $mobile->by =  Auth::user()->name;
 
         $mobile->save();
         return redirect()->route('mobile.index');
@@ -140,13 +143,14 @@ class MobileController extends Controller
     $extension = $file->getClientOriginalName();
     $upload_success = $file->move($destinationPath, $extension);
     }
+
     if ($request->hasFile('picture')) {
-      $file = base_path('/public/MobilImage/'.$mobile->picture);
-      $result = File::delete($file);
-    $file2 = $request->picture;
-    $destinationPath2 = 'MobileImage';
-    $extension2 = $file2->getClientOriginalName();
-    $upload_success2 = $file2->move($destinationPath2, $extension2);
+      $filex = base_path('/public/MobilImage/'.$mobile->picture);
+      $resultx = File::delete($filex);
+    $file2x = $request->picture;
+    $destinationPath2x = 'MobileImage';
+    $extension2x = $file2x->getClientOriginalName();
+    $upload_success2 = $file2x->move($destinationPath2x, $extension2x);
 
     }
     if($upload_success){

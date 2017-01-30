@@ -53,7 +53,7 @@
               <td>{{$value->date}}</span></td>
               <td>{{$value->by}}</td>
                 <td><a href= {{url('customer/'.  $value->id .'')}} class="btn btn-primary"><i class="fa fa-eye"></i> </a></td>
-                <td style="text-align:center;">
+                <td>
                   <form action="customer/<?php echo $value->id; ?>" method="POST">
                  {{ csrf_field() }}
                  {{ method_field('DELETE') }}
@@ -61,9 +61,6 @@
                  <button type="submit" class="btn btn-danger" style="display: inline-block;" onclick="return confirm('Are you sure?')"><i class="fa fa-remove"></i></button>
                  </form>
               </td>
-
-
-                </td>
               </tr>
 
   <?php $count++ ?>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\CustomerContact;
+use Auth;
 class CustomercontactController extends Controller
 {
     /**

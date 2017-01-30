@@ -11,7 +11,7 @@ use App\Customer;
 use DateTime;
 use File;
 use Storage;
-
+use Auth;
 class LogoController extends Controller
 {
   public function __construct()
@@ -72,7 +72,7 @@ class LogoController extends Controller
 
         $logo->picture =$extension2;
         $logo->date = $now;
-        $logo->by = "test";
+        $logo->by =Auth::user()->name;
 
         $logo->save();
         return redirect()->route('logo.index');

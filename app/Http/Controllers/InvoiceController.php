@@ -11,7 +11,7 @@ use App\Invoice;
 use App\project;
 use DateTime;
 use File;
-
+use Auth;
 class InvoiceController extends Controller
 {
     /**
@@ -83,7 +83,7 @@ class InvoiceController extends Controller
            $document->filename = $extension;
            $document->project_id = $request->project_id;
            $document->date = $now;
-           $document->by = "test";
+           $document->by = Auth::user()->name;
            $document->save();
            return redirect()->action('InvoiceController@listdata', ['id' => $request->project_id]);
          // return redirect()->route('requirement.listdata', ['id' => 1]);
