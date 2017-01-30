@@ -9,7 +9,6 @@ use App\User;
 use App;
 use App\Http\Controllers\Controller;
 use Validator;
-use Auth;
 class AccountController extends Controller
 {
     /**
