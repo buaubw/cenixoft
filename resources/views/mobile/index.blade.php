@@ -64,7 +64,7 @@
             </tr>
 
 <?php $count++ ?>
-@endforeach
+
 
           </table>
         </div>
