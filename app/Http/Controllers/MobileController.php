@@ -21,9 +21,10 @@ class MobileController extends Controller
   }
   public function index(){
 
-    $mobile = Mobile::all();
-
-     return view('mobile.index')->with('values', $mobile);
+     $mobile = Mobile::all();
+    //
+    //  return view('mobile.index')->with('values', $mobile);
+    return view('mobile.index')->with('values', $mobile);
     // return view('project.index');
   }
   public function create()
