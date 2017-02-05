@@ -39,6 +39,7 @@ class LogoController extends Controller
    */
   public function store(Request $request)
   {
+    
     $validator = Validator::make($request->all(), [
     'picture' => 'required|image|max:20480 ',
     'customerlogo' => 'required|image|max:20480 ',
