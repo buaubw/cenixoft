@@ -72,10 +72,10 @@
                 <label for="name" >About work</label>
               </div>
               <div class="col-md-4">
-                <input class="form-control" type="text" id="about work"  name="about work" value="" placeholder="about work" required>
+                <input class="form-control" type="text" id="about work"  name="aboutwork" value="" placeholder="about work" required>
               </div>
 
-
+                <input type="hidden" name="role" value="customer">
           </div>
 
 

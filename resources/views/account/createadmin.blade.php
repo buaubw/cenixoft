@@ -15,10 +15,10 @@
           <div class="box-body ">
 
             <div class="panel-body">
-                <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                  <form action="{{ action('AccountController@store') }}" method="POST">
                     {{ csrf_field() }}
 
-                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}" style="padding:20px;">
                         <label for="name" class="col-md-4 control-label">Full Name</label>
 
                         <div class="col-md-6">
@@ -31,7 +31,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                    <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}" style="padding:20px;">
                         <label for="username" class="col-md-4 control-label">UserName</label>
 
                         <div class="col-md-6">
@@ -45,7 +45,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}" style="padding:20px;">
                         <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                         <div class="col-md-6">
@@ -59,7 +59,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}" style="padding:20px;">
                         <label for="password" class="col-md-4 control-label">Password</label>
 
                         <div class="col-md-6">
@@ -73,15 +73,15 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" style="padding:20px;">
                         <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
 
                         <div class="col-md-6">
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                         </div>
                     </div>
-
-                    <div class="form-group">
+                    <input type="hidden" name="role" value="admin" >
+                    <div class="form-group" style="padding:20px;">
                         <div class="col-md-6 col-md-offset-4">
                             <button type="submit" class="btn btn-primary">
                                 Register

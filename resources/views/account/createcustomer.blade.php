@@ -12,12 +12,9 @@
       <div class="box">
         <div class="box-header">
           <h3 class="box-title">Create Customer Account</h3>
-
-
         </div>
         <!-- /.box-header -->
         <div class="box-body ">
-
             <div class="row" style="padding-top:10px;">
             <div class="col-md-2" style="text-align:right;">
               <label for="firstname" >First Name</label>
@@ -70,7 +67,7 @@
             <div class="col-md-4">
               <input class="form-control" type="text" id="about work"  name="about work" value="" placeholder="about work">
             </div>
-
+          
 
           </div>
 

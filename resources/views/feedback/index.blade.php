@@ -17,7 +17,7 @@
 
           <div class="box-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
-              <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+              <input type="text" name="table_search" class="form-control pull-right" placeholder="Search" id="inputsearch" onkeyup="myFunctionSearch()">
 
               <div class="input-group-btn">
                 <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
@@ -27,41 +27,25 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body table-responsive no-padding">
-          <table class="table table-hover">
+          <table class="table table-hover" id="searchtable">
             <tr>
               <th>No</th>
-              <th>Company Name</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Email</th>
+              <th>Project Name</th>
+              <th>Create Date</th>
               <th style="text-align: center;">View</th>
             </tr>
+            <?php $count=1; ?>
+            @foreach($values as $value)
             <tr>
-              <td>001</td>
-              <td>Logo Design</td>
-              <td>11-7-2014</td>
-              <td>Bua</span></td>
-              <td>Bua</span></td>
-              <td style="text-align: center;"><a href="{{url('feedback/view')}}" class="btn btn-primary"><i class="fa fa-eye"></i> </a>
+              <td>
+                {{$count}}
+                <?php $count++; ?>
               </td>
-                <script>
-function myFunction() {
-    var x;
-    if (confirm("Press a button!") == true) {
-        x = "You pressed OK!";
-    } else {
-        x = "You pressed Cancel!";
-    }
-    document.getElementById("demo").innerHTML = x;
-}
-</script>
-
-
-
-
-              </td>
+              <td>{{$value->pname}}</td>
+              <td>{{$value->create}}</td>
+              <td style="text-align: center;"><a href= {{url('feedback/view/'.$value->fid )}} class="btn btn-primary" ><i class="fa fa-eye"></i> </a></td>
             </tr>
-
+            @endforeach
           </table>
         </div>
         <!-- /.box-body -->
@@ -76,7 +60,28 @@ function myFunction() {
 </div>
 
 
+<script>
+function myFunctionSearch() {
+  // Declare variables
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("inputsearch");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("searchtable");
+  tr = table.getElementsByTagName("tr");
 
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
 
 
 

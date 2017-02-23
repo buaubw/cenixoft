@@ -11,31 +11,31 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="../public/css/app.css" rel="stylesheet">
-    <link rel="stylesheet" href="../public/bootstrap/css/bootstrap.min.css">
+    <link href="../css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../public/dist/css/AdminLTE.min.css">
-      <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+      <link rel="stylesheet" href="../../css/style.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="../../public/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
     <!-- iCheck -->
-    <link rel="stylesheet" href="../../public/plugins/iCheck/flat/blue.css">
+    <link rel="stylesheet" href="../../plugins/iCheck/flat/blue.css">
     <!-- Morris chart -->
-    <link rel="stylesheet" href="../../public/plugins/morris/morris.css">
+    <link rel="stylesheet" href="../../plugins/morris/morris.css">
     <!-- jvectormap -->
-    <link rel="stylesheet" href="../../public/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <link rel="stylesheet" href="../../plugins/jvectormap/jquery-jvectormap-1.2.2.css">
     <!-- Date Picker -->
-    <link rel="stylesheet" href="../../public/plugins/datepicker/datepicker3.css">
+    <link rel="stylesheet" href="../../plugins/datepicker/datepicker3.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="../../public/plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="../../public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -74,7 +74,11 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-
+          <li class="dropdown tasks-menu">
+            <a href="{{url('/changepassword')}}" >
+              <i class="fa fa-user"> {{ Auth::user()->name}}</i>
+            </a>
+          </li>
         <!-- Tasks: style can be found in dropdown.less -->
         <li class="dropdown tasks-menu">
           <a href="{{url('/logout')}}" >
@@ -95,7 +99,7 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview">
-        <a href="{{ url('profile') }}">
+        <a href="{{ url('home') }}">
             <i class="fa fa-briefcase"></i> <span>Profile</span>
 
           </a>
@@ -128,7 +132,7 @@
                 <span class="pull-right-container">
               </a>
               </li>
-              <li class="active treeview">
+              <li class="treeview">
                 <a href="#">
                   <i class="fa fa-users"></i> <span> Account Managment</span>
                   <span class="pull-right-container">
@@ -154,8 +158,8 @@
         @yield('content')
     </div>
 
-    <script src="../../public/js/app.js"></script>
-    <script src="../../public/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../../js/app.js"></script>
+    <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -163,33 +167,33 @@
       $.widget.bridge('uibutton', $.ui.button);
     </script>
     <!-- Bootstrap 3.3.6 -->
-    <script src="../../public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../bootstrap/js/bootstrap.min.js"></script>
     <!-- Morris.js charts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="../../public/plugins/morris/morris.min.js"></script>
+    <script src="../../plugins/morris/morris.min.js"></script>
     <!-- Sparkline -->
-    <script src="../../public/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="../../plugins/sparkline/jquery.sparkline.min.js"></script>
     <!-- jvectormap -->
-    <script src="/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="../../public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="../../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="../../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
     <!-- jQuery Knob Chart -->
-    <script src="../../public/plugins/knob/jquery.knob.js"></script>
+    <script src="../../plugins/knob/jquery.knob.js"></script>
     <!-- daterangepicker -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-    <script src="../../public/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
     <!-- datepicker -->
-    <script src="../../public/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script src="../../plugins/datepicker/bootstrap-datepicker.js"></script>
     <!-- Bootstrap WYSIHTML5 -->
-    <script src="../../public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <script src="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
     <!-- Slimscroll -->
-    <script src="../../public/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <!-- FastClick -->
-    <script src="../../public/plugins/fastclick/fastclick.js"></script>
+    <script src="../../plugins/fastclick/fastclick.js"></script>
     <!-- AdminLTE App -->
-    <script src="../../public/dist/js/app.min.js"></script>
+    <script src="../../dist/js/app.min.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="../../public/dist/js/pages/dashboard.js"></script>
+    <script src="../../dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="../../public/dist/js/demo.js"></script>
+    <script src="../../dist/js/demo.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
-          <center> <img src="../public/image/cnx.png" size width="280" height="200"> </center>
+          <center> <img src="../image/cnx.png" size width="280" height="200"> </center>
 
 
 
