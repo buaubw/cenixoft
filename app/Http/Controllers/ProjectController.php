@@ -9,11 +9,13 @@ use App\Project;
 use App\Customer;
 use DateTime;
 use Auth;
+use App\Http\Middleware\CheckAdmin;
 class ProjectController extends Controller
 {
   public function __construct()
   {
       $this->middleware('auth');
+      $this->middleware(CheckAdmin::class);
   }
   public function index(){
     $projects = Project::all();

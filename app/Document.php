@@ -9,4 +9,8 @@ class Document extends Model
   protected $table = 'documents';
   protected $primaryKey ='id';
   protected $fillable = ['filename','profile_id','type','date,'];
+  public function project()
+  {
+    return $this->belongsTo('App\Project');
+  }
 }

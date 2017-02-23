@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\CheckAdmin;
 use App;
 use App\Education;
 use DateTime;
 use Auth;
+
 class EducationController extends Controller
 {
     /**
@@ -17,17 +19,23 @@ class EducationController extends Controller
      */
      public function __construct()
      {
-         $this->middleware('auth');
+       $this->middleware('auth');
      }
     public function index()
     {
+      if(Auth::user()->role!='admin'){
+        return redirect('/');
+      }
       $educations = Education::all();
 
       return view('education.education')->with('values', $educations);
 
 
     }
-
+    public function educationlist(){
+      $educations = Education::all();
+      return view('customerapp.education.index')->with('educations',$educations);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -40,12 +48,17 @@ class EducationController extends Controller
     }
     public function editeducation()
     {
-
+      if(Auth::user()->role!='admin'){
+        return redirect('/');
+      }
          return view('education.editeducation');
 
     }
     public function vieweducation($id)
     {
+      if(Auth::user()->role!='admin'){
+        return redirect('/');
+      }
       $education = Education::find($id);
 
        // show the edit form and pass the nerd
@@ -63,6 +76,9 @@ class EducationController extends Controller
      */
     public function store(Request $request)
     {
+      if(Auth::user()->role!='admin'){
+        return redirect('/');
+      }
       $education = new Education;
       $now = new DateTime();
 

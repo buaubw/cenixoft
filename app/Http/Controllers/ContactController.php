@@ -13,6 +13,7 @@ use DateTime;
 use File;
 use Response;
 use Auth;
+use App\Http\Middleware\CheckAdmin;
 class ContactController extends Controller
 {
     /**
@@ -23,6 +24,7 @@ class ContactController extends Controller
      public function __construct()
      {
          $this->middleware('auth');
+         $this->middleware(CheckAdmin::class);
      }
      public function index()
      {
@@ -46,8 +48,9 @@ class ContactController extends Controller
             return view('document.index');
          }
 
-      //  return view('contact.list')->with('values', $documents)->with('project_id', $id);
-        return  \View::make('contact.list')->with('values', $documents)->with('valuescustomer', $documentscustomer)->with('project_id', $id)->with('project',$project);
+       return view('contact.list')->with('values', $documents)->with('valuescustomer', $documentscustomer)->with('project', $project);
+
+
      }
 
 
@@ -135,7 +138,7 @@ class ContactController extends Controller
        $extension="";
        $upload_success=false;
        if ($request->hasFile('filename')) {
-         $file2 = base_path('/public/documents/contact/'.$document->filename);
+         $file2 = base_path('documents/contact/'.$document->filename);
          $result2 = File::delete($file2);
        $file = $request->filename;
        $destinationPath = 'documents/contact';
@@ -169,7 +172,7 @@ class ContactController extends Controller
      {
        $document = App\Contact::find($id);
        $val = $document->project_id;
-       $file = base_path('/public/documents/contact/'.$document->filtename);
+       $file = base_path('documents/contact/'.$document->filtename);
        $result = File::delete($file);
        $document->delete();
 

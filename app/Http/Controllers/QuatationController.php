@@ -12,6 +12,7 @@ use App\project;
 use DateTime;
 use File;
 use Auth;
+use App\Http\Middleware\CheckAdmin;
 class QuatationController extends Controller
 {
     /**
@@ -22,6 +23,7 @@ class QuatationController extends Controller
      public function __construct()
      {
          $this->middleware('auth');
+         $this->middleware(CheckAdmin::class);
      }
      public function index()
      {
@@ -125,7 +127,7 @@ class QuatationController extends Controller
        $extension="";
        $upload_success=false;
        if ($request->hasFile('filename')) {
-         $file2 = base_path('/public/documents/quatation/'.$document->filename);
+         $file2 = base_path('documents/quatation/'.$document->filename);
          $result2 = File::delete($file2);
        $file = $request->filename;
        $destinationPath = 'documents/quatation';
@@ -159,7 +161,7 @@ class QuatationController extends Controller
      {
        $document = App\Quatation::find($id);
        $val = $document->project_id;
-       $file = base_path('/public/documents/quatation/'.$document->filtename);
+       $file = base_path('documents/quatation/'.$document->filtename);
        $result = File::delete($file);
        $document->delete();
 

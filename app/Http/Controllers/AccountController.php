@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Input;
+use Hash;
 use App\User;
 use App;
 use App\Http\Controllers\Controller;
 use Validator;
+use App\Http\Middleware\CheckAdmin;
 class AccountController extends Controller
 {
     /**
@@ -19,6 +23,7 @@ class AccountController extends Controller
      public function __construct()
      {
          $this->middleware('auth');
+         $this->middleware(CheckAdmin::class);
      }
     public function index()
     {
@@ -31,9 +36,14 @@ class AccountController extends Controller
     {
         return view('account.customer');
     }
+    public function changepassword()
+    {
+        return view('changepassword')->with('errorx','');
+    }
+
     public function admin()
     {
-      $users = User::all();
+      $users = DB::table('users')->where('role', 'admin')->get();
       return view('account.admin')->with('values', $users);
       //  return view('account.admin');
     }
@@ -71,7 +81,21 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-
+      $this->validate($request, [
+           'username' => 'required|max:255',
+           'password' => 'required',
+           'email' => 'required',
+           'role' => 'required',
+           'name' => 'required'
+       ]);
+      $user = new User;
+      $user->username = $request->username;
+      $user->password = bcrypt($request->password);
+      $user->email = $request->email;
+      $user->name = $request->name;
+      $user->role =$request->role;
+      $user->save();
+      return redirect('account/admin');
     }
 
     /**
@@ -105,7 +129,25 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $validator = Validator::make($request->all(), [
+            'oldpassword' => 'required|min:6',
+            'password' => 'required|min:6|confirmed',
+            'username' => 'required',
+            'email' => 'required',
+        ]);
+        $user = User::find(Auth::user()->id);
+        if(!Hash::check($request->oldpassword, $user->password)){
+        return redirect('/changepassword')
+                   ->with('errorx','The specified password does not match the database password');
+        }elseif($validator->fails()){
+          return redirect('/changepassword')->withErrors($validator);
+        }else{
+          $user->username = $request->username;
+          $user->email = $request->email;
+          $user->password = bcrypt($request->password);
+          $user->save();
+        }
+        return redirect('/home');
     }
 
     /**
@@ -117,7 +159,7 @@ class AccountController extends Controller
     public function destroy($id)
     {
       $user = App\User::find($id);
-      if(Auth::id()==$id){
+      if(Auth::user()->id==$id){
         $user->delete();
         return redirect('/login');
       }

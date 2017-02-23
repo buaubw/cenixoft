@@ -3,8 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Validator;
+use App;
+use App\Contact;
 use App\CustomerContact;
+use App\project;
+use DateTime;
+use File;
+use Response;
 use Auth;
+use App\Http\Middleware\CheckAdmin;
 class CustomercontactController extends Controller
 {
     /**
@@ -39,7 +49,36 @@ class CustomercontactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $now = new DateTime();
+
+      $validator = Validator::make($request->all(), [
+      'filename' => 'required|max:204800',
+      'title' =>'required'
+      ]);
+
+      if ($validator->fails()) {
+              return redirect('document/uploadDoc/'.$request->project_id)
+                          ->withErrors($validator)
+                          ->withInput();
+          }
+      if ($request->hasFile('filename')) {
+          $file = $request->filename;
+          $destinationPath = 'documents/customercontact';
+          $extension = $file->getClientOriginalName();
+          $upload_success = $file->move($destinationPath, $extension);
+
+          $document = new CustomerContact;
+          $document->title = $request->title;
+          $document->filename = $extension;
+          $document->project_id = $request->project_id;
+          $document->date = $now;
+          $document->by = Auth::user()->name;
+          $document->save();
+          return redirect()->action('DocumentController@customerdocument', ['id' => $request->project_id]);
+        // return redirect()->route('requirement.listdata', ['id' => 1]);
+        }
+        return redirect()->route('document/uploadDoc');
+
     }
 
     /**

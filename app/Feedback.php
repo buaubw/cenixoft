@@ -8,5 +8,9 @@ class Feedback extends Model
 {
   protected $table = 'feedbacks';
   protected $primaryKey ='id';
-  protected $fillable = ['profile_id','fullname','suggestion','convinience','ontime','price','complacency','date'];
+  protected $fillable = ['project_id','fullname','suggestion','convinience','ontime','price','complacency','date','requirement'];
+  public function project()
+  {
+    return $this->belongsTo('App\Project');
+  }
 }

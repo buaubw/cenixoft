@@ -12,6 +12,7 @@ use App\project;
 use DateTime;
 use File;
 use Auth;
+use App\Http\Middleware\CheckAdmin;
 class InvoiceController extends Controller
 {
     /**
@@ -22,6 +23,7 @@ class InvoiceController extends Controller
      public function __construct()
      {
          $this->middleware('auth');
+         $this->middleware(CheckAdmin::class);
      }
      public function index()
      {
@@ -125,7 +127,7 @@ class InvoiceController extends Controller
        $extension="";
        $upload_success=false;
        if ($request->hasFile('filename')) {
-         $file2 = base_path('/public/documents/invoice/'.$document->filename);
+         $file2 = base_path('documents/invoice/'.$document->filename);
          $result2 = File::delete($file2);
        $file = $request->filename;
        $destinationPath = 'documents/invoice';
@@ -159,7 +161,7 @@ class InvoiceController extends Controller
      {
        $document = App\Invoice::find($id);
        $val = $document->project_id;
-       $file = base_path('/public/documents/invoice/'.$document->filtename);
+       $file = base_path('documents/invoice/'.$document->filtename);
        $result = File::delete($file);
        $document->delete();
 

@@ -12,6 +12,7 @@ use App\Project;
 use DateTime;
 use File;
 use Auth;
+use App\Http\Middleware\CheckAdmin;
 class RequirementController extends Controller
 {
     /**
@@ -22,6 +23,7 @@ class RequirementController extends Controller
      public function __construct()
      {
          $this->middleware('auth');
+         $this->middleware(CheckAdmin::class);
      }
     public function index()
     {
@@ -125,7 +127,7 @@ class RequirementController extends Controller
       $extension="";
       $upload_success=false;
       if ($request->hasFile('filename')) {
-        $file2 = base_path('/public/documents/requirement/'.$document->filename);
+        $file2 = base_path('documents/requirement/'.$document->filename);
         $result2 = File::delete($file2);
       $file = $request->filename;
       $destinationPath = 'documents/requirement';
@@ -159,7 +161,7 @@ class RequirementController extends Controller
     {
       $document = App\Requirement::find($id);
       $val = $document->project_id;
-      $file = base_path('/public/documents/requirement/'.$document->filtename);
+      $file = base_path('documents/requirement/'.$document->filtename);
       $result = File::delete($file);
       $document->delete();
 

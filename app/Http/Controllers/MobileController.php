@@ -12,12 +12,13 @@ use DateTime;
 use File;
 use Auth;
 use Storage;
-
+use App\Http\Middleware\CheckAdmin;
 class MobileController extends Controller
 {
   public function __construct()
   {
       $this->middleware('auth');
+      $this->middleware(CheckAdmin::class);
   }
   public function index(){
 

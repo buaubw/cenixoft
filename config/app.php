@@ -165,7 +165,6 @@ return [
         Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Bestmomo\Filemanager\FilemanagerServiceProvider::class,
-
         /*
          * Package Service Providers...
          */

@@ -12,11 +12,13 @@ use DateTime;
 use File;
 use Storage;
 use Auth;
+use App\Http\Middleware\CheckAdmin;
 class LogoController extends Controller
 {
   public function __construct()
   {
       $this->middleware('auth');
+      $this->middleware(CheckAdmin::class);
   }
   public function index(){
 
@@ -39,7 +41,7 @@ class LogoController extends Controller
    */
   public function store(Request $request)
   {
-    
+
     $validator = Validator::make($request->all(), [
     'picture' => 'required|image|max:20480 ',
     'customerlogo' => 'required|image|max:20480 ',

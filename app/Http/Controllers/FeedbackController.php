@@ -3,6 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App;
+use App\Project;
+use App\Customer;
+use App\Feedback;
+use DateTime;
 use Auth;
 class FeedbackController extends Controller
 {
@@ -17,11 +24,22 @@ class FeedbackController extends Controller
      }
     public function index()
     {
-        return view('feedback.index');
+      $feedbacks = DB::table('feedbacks')
+      ->join('projects', 'projects.id', '=', 'feedbacks.project_id')
+      ->select('feedbacks.id as fid','projects.name as pname','feedbacks.created_at as create')->get();
+      return view('feedback.index')->with('values',$feedbacks);
     }
-    public function view()
+    public function view($id)
     {
-        return view('feedback.view');
+      $feedback = DB::table('feedbacks')
+      ->where('feedbacks.id','=',$id)
+      ->join('projects', 'projects.id', '=', 'feedbacks.project_id')->first();
+
+      $project = DB::table('projects')
+      ->where('projects.id',$feedback->project_id)
+      ->join('customers', 'customers.id', '=', 'projects.customer_id')->first();
+
+        return view('feedback.view')->with('value',$feedback)->with('project',$project);
     }
 
     /**
@@ -42,20 +60,19 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
-      $feedback = new feedback;
-
-      $feedback->profile_id = $request->profile_id;
-      $feedback->fullname = $request->fullname;
-      $feedback->suggestion = $request->suggestion;
-      $feedback->convinience = $request->convinience;
-      $feedback->ontime = $request->ontime;
-      $feedback->price = $request->price;
+      $feedback = new Feedback;
+      $now = new DateTime();
+      $feedback->date = $now;
+      $feedback->project_id = $request->profile_id;
+      $feedback->requirement = $request->requirement;
       $feedback->complacency = $request->complacency;
-      $feedback->date= $request->date;
-
-
-      $customer->save();
-
+      $feedback->price = $request->price;
+      $feedback->ontime = $request->ontime;
+      $feedback->convinience = $request->convinience;
+      $feedback->suggestion = $request->suggestion;
+      $feedback->fullname = Auth::user()->firstname.Auth::user()->lastname;
+      $feedback->save();
+      return redirect('document/customerdocument/'.$request->profile_id);
     }
 
     /**

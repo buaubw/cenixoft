@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Http\Middleware\CheckAdmin;
 class ProfileController extends Controller
 {
     /**
@@ -14,6 +15,7 @@ class ProfileController extends Controller
      public function __construct()
      {
          $this->middleware('auth');
+         $this->middleware(CheckAdmin::class);
      }
     public function index()
     {
